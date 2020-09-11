@@ -2,8 +2,8 @@ import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import { HomeStack } from './app/navigation/HomeStack';
-import { ProfileStack } from './app/navigation/ProfileStack';
+import { HomeStack } from './src/navigation/HomeStack';
+import { ProfileStack } from './src/navigation/ProfileStack';
 
 const Drawer = createDrawerNavigator();
 
