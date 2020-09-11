@@ -1,5 +1,4 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { ProfileScreen } from '../screens/ProfileScreen';
 import { TestScreen } from '../screens/TestScreen';
@@ -14,5 +13,3 @@ export function ProfileStack() {
 		</Stack.Navigator>
 	);
 }
-
-const styles = StyleSheet.create({});
