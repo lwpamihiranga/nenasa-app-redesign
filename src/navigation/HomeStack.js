@@ -2,7 +2,7 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { HomeScreen } from '../screens/HomeScreen';
 import { TestScreen } from '../screens/TestScreen';
-import {OLsubjectScreen} from '../screens/OLsubjectScreen'
+import { OLSubjectsScreen } from '../screens/OLSubjectsScreen';
 import { Ionicons } from '@expo/vector-icons';
 
 const Stack = createStackNavigator();
@@ -29,8 +29,7 @@ export function HomeStack({ navigation }) {
 				}}
 			/>
 			<Stack.Screen name="Test" component={TestScreen} />
-			<Stack.Screen name="O/L Subjects" component={OLsubjectScreen} />
-
+			<Stack.Screen name="O/L Subjects" component={OLSubjectsScreen} />
 		</Stack.Navigator>
 	);
 }
