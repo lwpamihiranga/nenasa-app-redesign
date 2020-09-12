@@ -24,6 +24,7 @@ export function HomeStack({ navigation }) {
 						);
 					},
 					headerLeftContainerStyle: { paddingLeft: 10 },
+					title: 'Nenasa Education',
 				}}
 			/>
 			<Stack.Screen name="Test" component={TestScreen} />
