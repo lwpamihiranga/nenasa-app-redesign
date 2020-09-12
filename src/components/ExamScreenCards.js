@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { AntDesign, FontAwesome } from '@expo/vector-icons';
 
-export function SubjectQuestionsScreenCards({ navigation, question }) {
+export function ExamScreenCards({ navigation, exam }) {
 	const [colors, setColors] = useState([
 		'#892667',
 		'#4FB471',
@@ -24,17 +24,26 @@ export function SubjectQuestionsScreenCards({ navigation, question }) {
 
 	return (
 		<TouchableOpacity style={styles.card}>
-			<Text style={styles.text}>{question.text}</Text>
-			<View style={styles.lowerhalf}>
-				<View>
-					<Text style={styles.noOfAnswers}>
-						{question.noOfAnswers} answers
-					</Text>
-					<TouchableOpacity style={styles.button}>
-						<Text>Answer</Text>
-						<AntDesign name="arrowright" size={20} color="black" />
-					</TouchableOpacity>
+			<Text style={styles.text}>{exam.text}</Text>
+			<View style={styles.upperhalf}>
+				<View style={styles.carets}>
+					<AntDesign name="caretup" size={24} color="black" />
+					<AntDesign name="caretdown" size={24} color="black" />
 				</View>
+				<View>
+					<Text style={styles.noOfQuestions}>
+						{exam.noOfQuestions} questions
+					</Text>
+					<Text style={styles.noOfAttempts}>
+						{exam.noOfAttempts} attempts
+					</Text>
+				</View>
+			</View>
+			<View style={styles.lowerhalf}>
+				<TouchableOpacity style={styles.button}>
+					<Text>Try</Text>
+					<AntDesign name="arrowright" size={20} color="black" />
+				</TouchableOpacity>
 				<View style={styles.allCircle}>
 					<FontAwesome
 						name="circle"
@@ -43,14 +52,14 @@ export function SubjectQuestionsScreenCards({ navigation, question }) {
 						style={styles.circle}
 					/>
 					<Text style={styles.firstLetter}>
-						{getFirstLetter(question.user.name)}
+						{getFirstLetter(exam.user.name)}
 					</Text>
 				</View>
 				<View style={styles.person}>
 					<Text style={styles.name}>
-						{question.user.name.slice(0, 17)}
+						{exam.user.name.slice(0, 17)}
 					</Text>
-					<Text style={styles.date}>{question.date}</Text>
+					<Text style={styles.date}>{exam.date}</Text>
 				</View>
 			</View>
 		</TouchableOpacity>
@@ -74,16 +83,31 @@ const styles = StyleSheet.create({
 		fontSize: 16,
 		textAlign: 'justify',
 		marginBottom: 10,
+		marginStart: 20,
+	},
+	upperhalf: {
+		flex: 1,
+		flexDirection: 'row',
+		justifyContent: 'space-between',
+		marginHorizontal: 5,
+	},
+	carets: {
+		justifyContent: 'space-between',
 	},
 	lowerhalf: {
 		flex: 1,
 		flexDirection: 'row',
-		justifyContent: 'space-evenly',
+		justifyContent: 'space-between',
 		marginHorizontal: 5,
+		marginTop: 10,
 	},
-	noOfAnswers: {
+	noOfAttempts: {
 		fontSize: 14,
-		color: '#0000',
+		color: '#000',
+	},
+	noOfQuestions: {
+		fontSize: 14,
+		color: '#000',
 	},
 	button: {
 		flexDirection: 'row',
@@ -96,11 +120,13 @@ const styles = StyleSheet.create({
 		shadowOffset: { width: 3, height: 3 },
 		elevation: 10,
 		padding: 10,
+		paddingEnd: 20,
 	},
 	allCircle: {
 		position: 'relative',
 		justifyContent: 'center',
 		alignItems: 'center',
+		marginEnd: 10,
 	},
 	firstLetter: {
 		fontSize: 20,
@@ -113,6 +139,6 @@ const styles = StyleSheet.create({
 		position: 'relative',
 	},
 	person: {
-		margin: 10,
+		marginTop: 5,
 	},
 });

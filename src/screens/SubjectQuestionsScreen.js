@@ -1,14 +1,17 @@
 import uuid from 'uuid-random';
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, FlatList } from 'react-native';
+import { StyleSheet, FlatList, SafeAreaView } from 'react-native';
+import { AntDesign } from '@expo/vector-icons';
+
 import { SubjectQuestionsScreenCards } from '../components/SubjectQuestionsScreenCards';
+import Header from '../components/Header';
 
 export function SubjectQuestionsScreen({ navigation }) {
 	const [questions, setQuestions] = useState([
 		{
 			id: uuid(),
 			text:
-				'Fill in the blanks using the verbs given in the brackets.They _____ some greeting cards to celebrate christmas every year. (make)',
+				'Fill in the blanks using the verbs given in the brackets.\n\nThey _____ some greeting cards to celebrate christmas every year. (make)',
 			noOfAnswers: 5,
 			user: {
 				name: 'Madhushan Dilshan',
@@ -37,7 +40,7 @@ export function SubjectQuestionsScreen({ navigation }) {
 		{
 			id: uuid(),
 			text:
-				'Fill in the blanks using the verbs given in the brackets. She _____ never going to make it in the real world. (be)',
+				'Fill in the blanks using the verbs given in the brackets.\n\nShe _____ never going to make it in the real world. (be)',
 			noOfAnswers: 2,
 			user: {
 				name: 'Madushan Dilshan',
@@ -47,7 +50,7 @@ export function SubjectQuestionsScreen({ navigation }) {
 		{
 			id: uuid(),
 			text:
-				'Fill in the blanks using the verbs given in the brackets. What ___ wrong with you? (be)',
+				'Fill in the blanks using the verbs given in the brackets.\n\nWhat ___ wrong with you? (be)',
 			noOfAnswers: 2,
 			user: {
 				name: 'Samadhi Samarathunga',
@@ -57,16 +60,22 @@ export function SubjectQuestionsScreen({ navigation }) {
 	]);
 
 	return (
-		<View style={styles.container}>
-			<Text>This is the Subject Questions Screen</Text>
+		<SafeAreaView style={styles.container}>
+			<Header title="A/L English" />
 			<FlatList
 				data={questions}
-				renderItem={({ question }) => (
-					<SubjectQuestionsScreenCards question={question} />
+				renderItem={({ item }) => (
+					<SubjectQuestionsScreenCards question={item} />
 				)}
-				keyExtractor={(question, index) => index.toString()}
+				keyExtractor={(item, index) => index.toString()}
 			/>
-		</View>
+			<AntDesign
+				name="pluscircle"
+				size={50}
+				color="black"
+				style={styles.floatButton}
+			/>
+		</SafeAreaView>
 	);
 }
 
@@ -76,5 +85,10 @@ const styles = StyleSheet.create({
 		backgroundColor: '#fff',
 		alignItems: 'center',
 		justifyContent: 'center',
+	},
+	floatButton: {
+		position: 'absolute',
+		bottom: 30,
+		right: 30,
 	},
 });
