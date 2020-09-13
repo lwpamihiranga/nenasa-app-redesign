@@ -6,11 +6,10 @@ import { SimpleLineIcons } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 
-export function ALSubjectsScreen(){
-    return(
-        <View style={{ flex: 1, margin: 10 }}>
-
-            <View
+export function ALSubjectsScreen({ navigation }) {
+	return (
+		<View style={{ flex: 1, margin: 10 }}>
+			<View
 				style={{
 					justifyContent: 'center',
 					alignContent: 'space-between',
@@ -29,9 +28,7 @@ export function ALSubjectsScreen(){
 				</Text>
 			</View>
 
-
-            
-            <View
+			<View
 				style={{
 					flex: 1,
 					flexDirection: 'row',
@@ -63,11 +60,15 @@ export function ALSubjectsScreen(){
 							justifyContent: 'center',
 							alignItems: 'center',
 						}}>
-						<MaterialCommunityIcons name="math-integral" size={30} color="black" />
+						<MaterialCommunityIcons
+							name="math-integral"
+							size={30}
+							color="black"
+						/>
 						<Text>Combined Maths</Text>
 					</View>
 				</TouchableOpacity>
-                <TouchableOpacity
+				<TouchableOpacity
 					style={{ flex: 1 }}
 					onPress={() => navigation.navigate('Test')}>
 					<View
@@ -78,15 +79,17 @@ export function ALSubjectsScreen(){
 							justifyContent: 'center',
 							alignItems: 'center',
 						}}>
-						<MaterialCommunityIcons name="math-compass" size={30} color="black" />
+						<MaterialCommunityIcons
+							name="math-compass"
+							size={30}
+							color="black"
+						/>
 						<Text>Physics</Text>
 					</View>
 				</TouchableOpacity>
 			</View>
 
-
-
-            <View
+			<View
 				style={{
 					flex: 1,
 					flexDirection: 'row',
@@ -103,7 +106,11 @@ export function ALSubjectsScreen(){
 							justifyContent: 'center',
 							alignItems: 'center',
 						}}>
-						<SimpleLineIcons name="chemistry" size={30} color="black" />
+						<SimpleLineIcons
+							name="chemistry"
+							size={30}
+							color="black"
+						/>
 						<Text>Chemistry</Text>
 					</View>
 				</TouchableOpacity>
@@ -118,11 +125,15 @@ export function ALSubjectsScreen(){
 							justifyContent: 'center',
 							alignItems: 'center',
 						}}>
-						<MaterialCommunityIcons name="flower" size={30} color="black" />
+						<MaterialCommunityIcons
+							name="flower"
+							size={30}
+							color="black"
+						/>
 						<Text>Agriculture</Text>
 					</View>
 				</TouchableOpacity>
-                <TouchableOpacity
+				<TouchableOpacity
 					style={{ flex: 1 }}
 					onPress={() => navigation.navigate('Test')}>
 					<View
@@ -133,15 +144,17 @@ export function ALSubjectsScreen(){
 							justifyContent: 'center',
 							alignItems: 'center',
 						}}>
-						<MaterialIcons name="laptop-chromebook" size={30} color="black" />
+						<MaterialIcons
+							name="laptop-chromebook"
+							size={30}
+							color="black"
+						/>
 						<Text>IT</Text>
 					</View>
 				</TouchableOpacity>
 			</View>
 
-
-
-            <View
+			<View
 				style={{
 					justifyContent: 'center',
 					alignContent: 'space-between',
@@ -160,10 +173,7 @@ export function ALSubjectsScreen(){
 				</Text>
 			</View>
 
-
-
-
-            <View
+			<View
 				style={{
 					flex: 1,
 					flexDirection: 'row',
@@ -180,7 +190,11 @@ export function ALSubjectsScreen(){
 							justifyContent: 'center',
 							alignItems: 'center',
 						}}>
-						<MaterialCommunityIcons name="newspaper-variant-multiple-outline" size={30} color="black" />
+						<MaterialCommunityIcons
+							name="newspaper-variant-multiple-outline"
+							size={30}
+							color="black"
+						/>
 						<Text>Accounting</Text>
 					</View>
 				</TouchableOpacity>
@@ -195,16 +209,17 @@ export function ALSubjectsScreen(){
 							justifyContent: 'center',
 							alignItems: 'center',
 						}}>
-						<MaterialCommunityIcons name="finance" size={30} color="black" />
+						<MaterialCommunityIcons
+							name="finance"
+							size={30}
+							color="black"
+						/>
 						<Text>Economics</Text>
 					</View>
 				</TouchableOpacity>
 			</View>
 
-
-
-
-            <View
+			<View
 				style={{
 					flex: 1,
 					flexDirection: 'row',
@@ -236,17 +251,17 @@ export function ALSubjectsScreen(){
 							justifyContent: 'center',
 							alignItems: 'center',
 						}}>
-						<MaterialIcons name="laptop-chromebook" size={30} color="black" />
+						<MaterialIcons
+							name="laptop-chromebook"
+							size={30}
+							color="black"
+						/>
 						<Text>IT</Text>
 					</View>
 				</TouchableOpacity>
 			</View>
 
-
-
-
-
-            <View
+			<View
 				style={{
 					justifyContent: 'center',
 					alignContent: 'space-between',
@@ -265,11 +280,7 @@ export function ALSubjectsScreen(){
 				</Text>
 			</View>
 
-
-
-
-
-            <View
+			<View
 				style={{
 					flex: 1,
 					flexDirection: 'row',
@@ -301,11 +312,15 @@ export function ALSubjectsScreen(){
 							justifyContent: 'center',
 							alignItems: 'center',
 						}}>
-						<MaterialCommunityIcons name="buddhism" size={30} color="black" />
+						<MaterialCommunityIcons
+							name="buddhism"
+							size={30}
+							color="black"
+						/>
 						<Text>BC</Text>
 					</View>
 				</TouchableOpacity>
-                <TouchableOpacity
+				<TouchableOpacity
 					style={{ flex: 1 }}
 					onPress={() => navigation.navigate('Test')}>
 					<View
@@ -326,11 +341,7 @@ export function ALSubjectsScreen(){
 				</TouchableOpacity>
 			</View>
 
-
-
-
-
-            <View
+			<View
 				style={{
 					flex: 1,
 					flexDirection: 'row',
@@ -347,7 +358,11 @@ export function ALSubjectsScreen(){
 							justifyContent: 'center',
 							alignItems: 'center',
 						}}>
-						<MaterialCommunityIcons name="drama-masks" size={30} color="black" />
+						<MaterialCommunityIcons
+							name="drama-masks"
+							size={30}
+							color="black"
+						/>
 						<Text>Drama</Text>
 					</View>
 				</TouchableOpacity>
@@ -366,7 +381,7 @@ export function ALSubjectsScreen(){
 						<Text>Dancing</Text>
 					</View>
 				</TouchableOpacity>
-                <TouchableOpacity
+				<TouchableOpacity
 					style={{ flex: 1 }}
 					onPress={() => navigation.navigate('Test')}>
 					<View
@@ -383,10 +398,7 @@ export function ALSubjectsScreen(){
 				</TouchableOpacity>
 			</View>
 
-
-
-
-            <View
+			<View
 				style={{
 					justifyContent: 'center',
 					alignContent: 'space-between',
@@ -405,9 +417,7 @@ export function ALSubjectsScreen(){
 				</Text>
 			</View>
 
-
-
-            <View
+			<View
 				style={{
 					flex: 1,
 					flexDirection: 'row',
@@ -424,7 +434,11 @@ export function ALSubjectsScreen(){
 							justifyContent: 'center',
 							alignItems: 'center',
 						}}>
-						<MaterialCommunityIcons name="math-compass" size={24} color="black" />
+						<MaterialCommunityIcons
+							name="math-compass"
+							size={24}
+							color="black"
+						/>
 						<Text>Eng.Technology</Text>
 					</View>
 				</TouchableOpacity>
@@ -443,7 +457,7 @@ export function ALSubjectsScreen(){
 						<Text>Biotechnology</Text>
 					</View>
 				</TouchableOpacity>
-                <TouchableOpacity
+				<TouchableOpacity
 					style={{ flex: 1 }}
 					onPress={() => navigation.navigate('Test')}>
 					<View
@@ -459,11 +473,6 @@ export function ALSubjectsScreen(){
 					</View>
 				</TouchableOpacity>
 			</View>
-
-
-
-
-
-        </View>
-    );
+		</View>
+	);
 }

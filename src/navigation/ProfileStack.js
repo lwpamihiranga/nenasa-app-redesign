@@ -3,6 +3,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { ProfileScreen } from '../screens/ProfileScreen';
 import { TestScreen } from '../screens/TestScreen';
 import { Ionicons } from '@expo/vector-icons';
+import { Feather } from '@expo/vector-icons';
 
 const Stack = createStackNavigator();
 
@@ -24,6 +25,17 @@ export function ProfileStack({ navigation }) {
 						);
 					},
 					headerLeftContainerStyle: { paddingLeft: 10 },
+					headerRight: () => {
+						return (
+							<Feather
+								name="edit"
+								size={28}
+								color="black"
+								onPress={() => navigation.navigate('Test')}
+							/>
+						);
+					},
+					headerRightContainerStyle: { paddingRight: 15 },
 				}}
 			/>
 			<Stack.Screen name="Test" component={TestScreen} />
