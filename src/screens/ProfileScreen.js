@@ -3,11 +3,10 @@ import { StyleSheet, Text, View, Button, Image } from 'react-native';
 
 export function ProfileScreen({ navigation }) {
 	return (
-		<View style={{ flex: 1, backgroundColor: 'red', margin: 10 }}>
+		<View style={{ flex: 1, backgroundColor: 'white', padding: 10 }}>
 			<View
 				style={{
 					flex: 2,
-					backgroundColor: 'green',
 					margin: 5,
 					justifyContent: 'center',
 					alignItems: 'center',
@@ -28,14 +27,13 @@ export function ProfileScreen({ navigation }) {
 			<View
 				style={{
 					flex: 1,
-					backgroundColor: 'blue',
+					backgroundColor: '#F2F2F2',
 					margin: 5,
 					flexDirection: 'row',
 				}}>
 				<View
 					style={{
 						flex: 1,
-						backgroundColor: 'green',
 						justifyContent: 'center',
 						alignItems: 'center',
 					}}>
@@ -45,9 +43,10 @@ export function ProfileScreen({ navigation }) {
 				<View
 					style={{
 						flex: 1,
-						backgroundColor: 'yellow',
 						justifyContent: 'center',
 						alignItems: 'center',
+						borderLeftColor: 'black',
+						borderLeftWidth: 0.5,
 					}}>
 					<Text style={{ fontSize: 30 }}>5</Text>
 					<Text style={{ fontSize: 10 }}>Following</Text>
@@ -55,9 +54,10 @@ export function ProfileScreen({ navigation }) {
 				<View
 					style={{
 						flex: 1,
-						backgroundColor: 'grey',
 						justifyContent: 'center',
 						alignItems: 'center',
+						borderLeftColor: 'black',
+						borderLeftWidth: 0.5,
 					}}>
 					<Text style={{ fontSize: 30 }}>25</Text>
 					<Text style={{ fontSize: 10 }}>Asked</Text>
@@ -65,9 +65,10 @@ export function ProfileScreen({ navigation }) {
 				<View
 					style={{
 						flex: 1,
-						backgroundColor: 'white',
 						justifyContent: 'center',
 						alignItems: 'center',
+						borderLeftColor: 'black',
+						borderLeftWidth: 0.5,
 					}}>
 					<Text style={{ fontSize: 30 }}>50</Text>
 					<Text style={{ fontSize: 10 }}>Answered</Text>
@@ -76,14 +77,13 @@ export function ProfileScreen({ navigation }) {
 			<View
 				style={{
 					flex: 4,
-					backgroundColor: 'yellow',
 					margin: 5,
 					padding: 5,
 				}}>
 				<View
 					style={{
 						flex: 1,
-						backgroundColor: 'blue',
+						backgroundColor: '#F2F2F2',
 						marginBottom: 5,
 						flexDirection: 'row',
 						justifyContent: 'center',
@@ -97,7 +97,7 @@ export function ProfileScreen({ navigation }) {
 				<View
 					style={{
 						flex: 1,
-						backgroundColor: 'green',
+						backgroundColor: '#F2F2F2',
 						marginBottom: 5,
 						flexDirection: 'row',
 						justifyContent: 'center',
@@ -109,7 +109,7 @@ export function ProfileScreen({ navigation }) {
 				<View
 					style={{
 						flex: 1,
-						backgroundColor: 'grey',
+						backgroundColor: '#F2F2F2',
 						marginBottom: 5,
 						flexDirection: 'row',
 						justifyContent: 'center',
@@ -121,7 +121,7 @@ export function ProfileScreen({ navigation }) {
 				<View
 					style={{
 						flex: 1,
-						backgroundColor: 'white',
+						backgroundColor: '#F2F2F2',
 						flexDirection: 'row',
 						justifyContent: 'center',
 						alignItems: 'center',
