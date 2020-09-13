@@ -61,19 +61,21 @@ export function SubjectQuestionsScreen({ navigation }) {
 
 	return (
 		<SafeAreaView style={styles.container}>
-			<Header title="A/L English" />
+			{/* <Header title="A/L English" /> */}
 			<FlatList
 				data={questions}
 				renderItem={({ item }) => (
 					<SubjectQuestionsScreenCards question={item} />
 				)}
 				keyExtractor={(item, index) => index.toString()}
+				onPress={() => navigation.navigate('AnswerQuestion')}
 			/>
 			<AntDesign
 				name="pluscircle"
 				size={50}
 				color="black"
 				style={styles.floatButton}
+				onPress={() => navigation.navigate('AskQuestionScreen')}
 			/>
 		</SafeAreaView>
 	);

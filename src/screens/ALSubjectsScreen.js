@@ -36,7 +36,9 @@ export function ALSubjectsScreen({ navigation }) {
 				}}>
 				<TouchableOpacity
 					style={{ flex: 1 }}
-					onPress={() => navigation.navigate('Test')}>
+					onPress={() =>
+						navigation.navigate('SubjectQuestionsScreen')
+					}>
 					<View
 						style={{
 							flex: 1,
