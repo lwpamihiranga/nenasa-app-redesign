@@ -1,21 +1,21 @@
 import React from 'react';
-import { StatusBar } from 'expo-status-bar';
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { HomeStack } from './src/navigation/HomeStack';
 import { ProfileStack } from './src/navigation/ProfileStack';
 import { TermsConditionsStack } from './src/navigation/TermsConditionsStack';
 import { AboutUsStack } from './src/navigation/AboutUsStack';
+import { OnBoardingScreen } from './src/screens/OnBoardingScreen';
 import { Ionicons } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { Foundation } from '@expo/vector-icons';
+import { Entypo } from '@expo/vector-icons';
 
 const Drawer = createDrawerNavigator();
 
 export default function App() {
 	return (
 		<NavigationContainer>
-			<StatusBar style="auto" />
 			<Drawer.Navigator initialRouteName="Home">
 				<Drawer.Screen
 					name="Home"
@@ -72,6 +72,22 @@ export default function App() {
 									name="ios-information-circle-outline"
 									size={24}
 									color="black"
+								/>
+							);
+						},
+					}}
+				/>
+				<Drawer.Screen
+					name="User Guide"
+					component={OnBoardingScreen}
+					options={{
+						drawerIcon: () => {
+							return (
+								<Entypo
+									name="help-with-circle"
+									size={20}
+									color="black"
+									style={{ marginLeft: 0 }}
 								/>
 							);
 						},
