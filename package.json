@@ -27,7 +27,7 @@
     "react-native-safe-area-context": "~3.0.7",
     "react-native-screens": "~2.9.0",
     "react-native-web": "~0.11.7",
-    "rn-material-dropdown": "^0.11.3"
+    "rn-material-dropdown": "^0.11.3",
     "uuid-random": "^1.3.2"
   },
   "devDependencies": {
