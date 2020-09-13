@@ -8,6 +8,7 @@ import { SubjectQuestionsScreen } from '../screens/SubjectQuestionsScreen';
 import { AskQuestionScreen } from '../screens/AskQuestionScreen';
 import { AnswerQuestion } from '../screens/AnswerQuestion';
 import { ExamScreen } from '../screens/ExamScreen';
+import { OtherPages } from '../screens/OtherPages';
 import { Ionicons } from '@expo/vector-icons';
 
 const Stack = createStackNavigator();
@@ -36,6 +37,7 @@ export function HomeStack({ navigation }) {
 			<Stack.Screen name="Test" component={TestScreen} />
 			<Stack.Screen name="O/L Subjects" component={OLSubjectsScreen} />
 			<Stack.Screen name="A/L Subjects" component={ALSubjectsScreen} />
+			<Stack.Screen name="Other Courses" component={OtherPages} />
 			<Stack.Screen
 				name="SubjectQuestionsScreen"
 				component={SubjectQuestionsScreen}
