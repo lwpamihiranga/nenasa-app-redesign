@@ -101,7 +101,7 @@ export function HomeScreen({ navigation }) {
 				}}>
 				<TouchableOpacity
 					style={{ flex: 1 }}
-					onPress={() => navigation.navigate('Test')}>
+					onPress={() => navigation.navigate('ExamScreen')}>
 					<View
 						style={{
 							flex: 1,
