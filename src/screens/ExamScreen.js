@@ -52,7 +52,7 @@ export function ExamScreen({ navigation }) {
 
 	return (
 		<SafeAreaView style={styles.container}>
-			<Header title="Exams &amp; Tests" />
+			{/* <Header title="Exams &amp; Tests" /> */}
 			<FlatList
 				data={exams}
 				renderItem={({ item }) => <ExamScreenCards exam={item} />}
