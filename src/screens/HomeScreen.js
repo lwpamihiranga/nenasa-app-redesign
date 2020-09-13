@@ -1,4 +1,5 @@
 import React from 'react';
+import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
@@ -7,6 +8,7 @@ import { Ionicons } from '@expo/vector-icons';
 export function HomeScreen({ navigation }) {
 	return (
 		<View style={{ flex: 1, margin: 10 }}>
+			<StatusBar style="dark" backgroundColor="#adadad" />
 			<View
 				style={{
 					flex: 1,
