@@ -16,9 +16,11 @@ export default function App() {
 			<Drawer.Navigator initialRouteName="Home">
 				<Drawer.Screen name="Home" component={HomeStack} />
 				<Drawer.Screen name="User Account" component={ProfileStack} />
-				<Drawer.Screen name="Terms and Conditions" component={TermsConditionsStack} />
+				<Drawer.Screen
+					name="Terms and Conditions"
+					component={TermsConditionsStack}
+				/>
 				<Drawer.Screen name="About us" component={AboutUsStack} />
-
 			</Drawer.Navigator>
 		</NavigationContainer>
 	);
