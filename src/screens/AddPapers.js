@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, TextInput, Alert } from 'react-native';
 import { Dropdown } from 'react-native-material-dropdown-v2';
+import RadioButtonRN from 'radio-buttons-react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 
@@ -53,6 +54,14 @@ let level = [
     {value: 'O/L'},
     {value: 'A/L'},
 ]
+
+let rdobtn = [
+
+    {value: 'Sinahala Medium'},
+    {value: 'English Medium'},
+
+]
+
 
 const [value, onChangeText] = React.useState('');
 const [valuepapers, onChangeTextdesc] = React.useState('');
@@ -223,6 +232,26 @@ const [valuepapers, onChangeTextdesc] = React.useState('');
                     </View>
 
 
+
+                    <View style={{
+                        	flex: 1,
+                            flexDirection: 'row',
+                            flexGrow: 1,
+                            justifyContent: "space-evenly",
+                    }}>
+
+                    <RadioButtonRN
+                            data={rdobtn}
+                            selectedBtn={(e) => console.log(e)}
+
+                    />        
+
+                    <RadioButtonRN
+                            data={rdobtn}
+                            selectedBtn={(e) => console.log(e)}
+
+                    />        
+                    </View>
 
 
 
