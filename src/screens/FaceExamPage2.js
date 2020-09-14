@@ -13,6 +13,8 @@ import {
 } from 'react-native';
 import RadioButtonRN from 'radio-buttons-react-native';
 import { AntDesign } from '@expo/vector-icons'; 
+import CountDown from 'react-native-countdown-component';
+
 
 
 export function FaceExamPage2({ navigation }) {
@@ -35,8 +37,20 @@ export function FaceExamPage2({ navigation }) {
         ];
 	return (
 		<View style={styles.container}>
-			<Text style={{marginTop:30,textAlign:"center",fontSize:60,backgroundColor:'#d3d3d3'}}> 00 : 08: 01 </Text>
-			<Text style={{marginTop:30,fontSize:25,marginLeft:20}}>What is the national language of india?</Text>
+            <CountDown
+            style={{marginTop:30}}
+            size={30}
+            until={900}
+            onFinish={() => alert('Finished')}
+            digitStyle={{backgroundColor: '#FFF', borderWidth: 2, borderColor: '#F7BE56'}}
+            digitTxtStyle={{color: 'black'}}
+            timeLabelStyle={{color: 'red', fontWeight: 'bold'}}
+            separatorStyle={{color: '#F7BE56'}}
+            timeToShow={['H', 'M', 'S']}
+            timeLabels={{m: null, s: null}}
+            showSeparator
+            />	
+            <Text style={{marginTop:30,fontSize:25,marginLeft:20}}>What is the national language of india?</Text>
             <RadioButtonRN
                 style={{marginLeft:10,marginTop:30,marginRight:10}}
                 data={data}
@@ -64,8 +78,8 @@ export function FaceExamPage2({ navigation }) {
                 <TouchableOpacity
 					style={{ flex: 1 }}
                     onPress={() => Alert.alert(
-                        '4 answers are correct out of 10 ',
-                        alertMessage,
+                        ' Finished',
+                        '4 answers are correct out of 10',
                         [
                           {text: 'OK', onPress: () => navigation.navigate('A/L Subjects')},
                         ]
