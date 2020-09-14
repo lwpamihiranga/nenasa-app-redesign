@@ -54,12 +54,14 @@ export function AskQuestionScreen({ navigation }) {
 
 	return (
 		<View style={styles.container}>
+			<View style={styles.dropdow}>
 			<Dropdown
-				style={styles.dropdow}
+				
 				label="Select grade or lesson"
 				data={data}
 			/>
-
+			
+			</View>
 			<TextInput
 				style={styles.textQ}
 				onChangeText={(text) => onChangeText(text)}
@@ -126,7 +128,9 @@ const styles = StyleSheet.create({
 		marginLeft: 20,
 		marginRight: 20,
 		marginTop: 50,
-		height: 80,
+		height: 62,
+		backgroundColor:'#d3d3d3',
+		
 	},
 	textQ: {
 		marginLeft: 20,
