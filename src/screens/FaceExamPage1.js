@@ -11,6 +11,8 @@ import {
 } from 'react-native';
 import RadioButtonRN from 'radio-buttons-react-native';
 import { AntDesign } from '@expo/vector-icons'; 
+import CountDown from 'react-native-countdown-component';
+
 
 
 export function FaceExamPage1({ navigation }) {
@@ -33,7 +35,19 @@ export function FaceExamPage1({ navigation }) {
         ];
 	return (
 		<View style={styles.container}>
-			<Text style={{marginTop:30,textAlign:"center",fontSize:60,backgroundColor:'#d3d3d3'}}> 00 : 09: 12 </Text>
+            <CountDown
+            style={{marginTop:30}}
+            size={30}
+            until={1000}
+            onFinish={() => alert('Finished')}
+            digitStyle={{backgroundColor: '#FFF', borderWidth: 2, borderColor: '#F7BE56'}}
+            digitTxtStyle={{color: 'black'}}
+            timeLabelStyle={{color: 'red', fontWeight: 'bold'}}
+            separatorStyle={{color: '#F7BE56'}}
+            timeToShow={['H', 'M', 'S']}
+            timeLabels={{m: null, s: null}}
+            showSeparator
+            />
 			<Text style={{marginTop:30,fontSize:25,marginLeft:20}}>What is the national sport of India?</Text>
             <RadioButtonRN
                 style={{marginLeft:10,marginTop:30,marginRight:10}}
