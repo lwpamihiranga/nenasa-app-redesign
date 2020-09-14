@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View,alertMessage,Alert,alert } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { AntDesign, FontAwesome } from '@expo/vector-icons';
 
-export function ExamScreenCards({ navigation, exam }) {
+export function AnswerQuestionCard({ navigation, exam }) {
 	const [colors, setColors] = useState([
 		'#892667',
 		'#4FB471',
@@ -23,35 +23,14 @@ export function ExamScreenCards({ navigation, exam }) {
 	};
 
 	return (
-		<TouchableOpacity style={styles.card}
-		onPress={() => Alert.alert(
-			'important !',
-			"You wish to proceed with this quiz?",
-			[
-			  {text: 'Cancel', onPress: () => console.log('Cancel Pressed!')},
-			  {text: 'Start', onPress: () => navigation.navigate('A/L Subjects')},
-			]
-		  )} >
+		<TouchableOpacity style={styles.card}>
 			<Text style={styles.text}>{exam.text}</Text>
 			<View style={styles.upperhalf}>
-				<View style={styles.carets}>
-					<AntDesign name="caretup" size={24} color="black" />
-					<AntDesign name="caretdown" size={24} color="black" />
-				</View>
-				<View>
-					<Text style={styles.noOfQuestions}>
-						{exam.noOfQuestions} questions
-					</Text>
-					<Text style={styles.noOfAttempts}>
-						{exam.noOfAttempts} attempts
-					</Text>
-				</View>
+				
+			
 			</View>
 			<View style={styles.lowerhalf}>
-				<TouchableOpacity style={styles.button}>
-					<Text>Try</Text>
-					<AntDesign name="arrowright" size={20} color="black" />
-				</TouchableOpacity>
+				
 				<View style={styles.allCircle}>
 					<FontAwesome
 						name="circle"
@@ -135,6 +114,7 @@ const styles = StyleSheet.create({
 		justifyContent: 'center',
 		alignItems: 'center',
 		marginEnd: 10,
+		marginLeft:190
 	},
 	firstLetter: {
 		fontSize: 20,
@@ -145,6 +125,7 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 		justifyContent: 'center',
 		position: 'relative',
+		
 	},
 	person: {
 		marginTop: 5,

@@ -12,10 +12,49 @@ import {
 import { Dropdown } from 'react-native-material-dropdown-v2';
 import { Entypo, FontAwesome } from '@expo/vector-icons';
 import { ScrollView } from 'react-native-gesture-handler';
+import uuid from 'uuid-random';
+import  { useState } from 'react';
+import { AnswerQuestionCard } from '../components/AnswerQuestionCard';
+
+
+
 
 export function AnswerQuestion({ navigation }) {
 	const [value, onChangeText] = React.useState('');
-
+	const [exams, setExams] = useState([
+		{
+			id: uuid(),
+			text: 'Answer is cut',
+			user: {
+				name: 'Anjula Dilshani',
+			},
+			date: 'Apr 19 2019',
+		},
+		{
+			id: uuid(),
+			text: 'same word for present tense,past tense and past participal',	
+			user: {
+				name: 'Chathu',
+			},
+			date: 'Mar 10 2019',
+		},
+		{
+			id: uuid(),
+			text: 'same answer-cut',	
+			user: {
+				name: 'Pasindu',
+			},
+			date: 'Jan 03 2019',
+		},
+		{
+			id: uuid(),
+			text: 'same word for past tense',
+			user: {
+				name: 'Kishanika Raj',
+			},
+			date: 'Jan 01 2019',
+		},
+	]);
 	return (
 		<View style={styles.container}>
 			<View
@@ -78,23 +117,10 @@ export function AnswerQuestion({ navigation }) {
 					maxHeight: 330,
 				}}>
 				<FlatList
-					style={{ marginLeft: 20 }}
-					data={[
-						{ key: 'Cut - Amith Mihiranga' },
-						{ key: 'Cut - Tereen Prasanga' },
-						{ key: 'Cut - Upuli Han' },
-						{ key: 'Cut - Husmitha Silva' },
-						{ key: 'Cut - Kasun Rajapaksha' },
-						{ key: 'Cut - Lalidu Bhagya' },
-						{ key: 'Cut - Praba Jayalath' },
-						{ key: 'Cut - Hasitha Rajakaruna' },
-						{ key: 'Cut - Kamal Silva' },
-						{ key: 'Cut - Deshan Sudun' },
-					]}
-					renderItem={({ item }) => (
-						<Text style={styles.item}>{item.key}</Text>
-					)}
-				/>
+				data={exams}
+				renderItem={({ item }) => <AnswerQuestionCard exam={item} />}
+				keyExtractor={(item, index) => index.toString()}
+			/>
 			</ScrollView>
 
 			<View style={{ flexDirection: 'row' }}>
