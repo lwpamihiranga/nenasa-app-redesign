@@ -2,6 +2,7 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { ProfileScreen } from '../screens/ProfileScreen';
 import { TestScreen } from '../screens/TestScreen';
+import {EditProfile} from '../screens/EditProfile';
 import { Ionicons } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
 
@@ -31,7 +32,7 @@ export function ProfileStack({ navigation }) {
 								name="edit"
 								size={28}
 								color="black"
-								onPress={() => navigation.navigate('Test')}
+								onPress={() => navigation.navigate('User')}
 							/>
 						);
 					},
@@ -39,6 +40,8 @@ export function ProfileStack({ navigation }) {
 				}}
 			/>
 			<Stack.Screen name="Test" component={TestScreen} />
+			<Stack.Screen name="User" component={EditProfile} />
+
 		</Stack.Navigator>
 	);
 }
