@@ -34,6 +34,7 @@ export function HomeStack({ navigation }) {
 					},
 					headerLeftContainerStyle: { paddingLeft: 10 },
 					title: 'Nenasa Education',
+					headerTitleAlign: 'center',
 				}}
 			/>
 			<Stack.Screen name="Test" component={TestScreen} />
@@ -47,7 +48,11 @@ export function HomeStack({ navigation }) {
 				component={ALSubjectsScreen}
 				options={{ headerTitleAlign: 'center' }}
 			/>
-			<Stack.Screen name="Other Courses" component={OtherPages} />
+			<Stack.Screen
+				name="Other Courses"
+				component={OtherPages}
+				options={{ headerTitleAlign: 'center' }}
+			/>
 			<Stack.Screen
 				name="SubjectQuestionsScreen"
 				component={SubjectQuestionsScreen}
@@ -56,15 +61,31 @@ export function HomeStack({ navigation }) {
 			<Stack.Screen
 				name="AskQuestionScreen"
 				component={AskQuestionScreen}
+				options={{
+					title: 'Ask a Question',
+					headerTitleAlign: 'center',
+				}}
 			/>
-			<Stack.Screen name="AnswerQuestion" component={AnswerQuestion} />
+			<Stack.Screen
+				name="AnswerQuestion"
+				component={AnswerQuestion}
+				options={{ title: 'View Answers', headerTitleAlign: 'center' }}
+			/>
 			<Stack.Screen
 				name="ExamScreen"
 				component={ExamScreen}
-				options={{ title: 'Exams & Tests' }}
+				options={{ title: 'Exams & Tests', headerTitleAlign: 'center' }}
 			/>
-			<Stack.Screen name="FaceExamPage1" component={FaceExamPage1} />
-			<Stack.Screen name="FaceExamPage2" component={FaceExamPage2} />
+			<Stack.Screen
+				name="FaceExamPage1"
+				component={FaceExamPage1}
+				options={{ title: 'Exam', headerTitleAlign: 'center' }}
+			/>
+			<Stack.Screen
+				name="FaceExamPage2"
+				component={FaceExamPage2}
+				options={{ title: 'End', headerTitleAlign: 'center' }}
+			/>
 		</Stack.Navigator>
 	);
 }
