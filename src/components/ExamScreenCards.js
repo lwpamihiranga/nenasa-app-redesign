@@ -1,9 +1,18 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View,alertMessage,Alert,alert } from 'react-native';
+import {
+	StyleSheet,
+	Text,
+	View,
+	alertMessage,
+	Alert,
+	alert,
+} from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { AntDesign, FontAwesome } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
 
-export function ExamScreenCards({ navigation, exam }) {
+export function ExamScreenCards({ exam }) {
+	const navigation = useNavigation();
 	const [colors, setColors] = useState([
 		'#892667',
 		'#4FB471',
@@ -23,15 +32,24 @@ export function ExamScreenCards({ navigation, exam }) {
 	};
 
 	return (
-		<TouchableOpacity style={styles.card}
-		onPress={() => Alert.alert(
-			'important !',
-			"You wish to proceed with this quiz?",
-			[
-			  {text: 'Cancel', onPress: () => console.log('Cancel Pressed!')},
-			  {text: 'Start', onPress: () => navigation.navigate('A/L Subjects')},
-			]
-		  )} >
+		<TouchableOpacity
+			style={styles.card}
+			onPress={() =>
+				Alert.alert(
+					'important !',
+					'You wish to proceed with this quiz?',
+					[
+						{
+							text: 'Cancel',
+							onPress: () => console.log('Cancel Pressed!'),
+						},
+						{
+							text: 'Start',
+							onPress: () => navigation.navigate('FaceExamPage1'),
+						},
+					]
+				)
+			}>
 			<Text style={styles.text}>{exam.text}</Text>
 			<View style={styles.upperhalf}>
 				<View style={styles.carets}>

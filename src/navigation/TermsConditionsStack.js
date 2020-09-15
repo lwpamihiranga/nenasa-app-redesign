@@ -23,6 +23,7 @@ export function TermsConditionsStack({ navigation }) {
 						);
 					},
 					headerLeftContainerStyle: { paddingLeft: 10 },
+					headerTitleAlign: 'center',
 				}}
 			/>
 		</Stack.Navigator>

@@ -36,6 +36,7 @@ export function ProfileStack({ navigation }) {
 						);
 					},
 					headerRightContainerStyle: { paddingRight: 15 },
+					headerTitleAlign: 'center',
 				}}
 			/>
 			<Stack.Screen name="Test" component={TestScreen} />
