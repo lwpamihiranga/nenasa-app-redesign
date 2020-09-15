@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { AntDesign, FontAwesome } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
 
-export function SubjectQuestionsScreenCards({ navigation, question }) {
+export function SubjectQuestionsScreenCards({ question }) {
+	const navigation = useNavigation();
 	const [colors, setColors] = useState([
 		'#892667',
 		'#4FB471',
@@ -23,7 +25,9 @@ export function SubjectQuestionsScreenCards({ navigation, question }) {
 	};
 
 	return (
-		<TouchableOpacity style={styles.card}>
+		<TouchableOpacity
+			style={styles.card}
+			onPress={() => navigation.navigate('AnswerQuestion')}>
 			<Text style={styles.text}>{question.text}</Text>
 			<View style={styles.lowerhalf}>
 				<View>
