@@ -37,13 +37,21 @@ export function HomeStack({ navigation }) {
 				}}
 			/>
 			<Stack.Screen name="Test" component={TestScreen} />
-			<Stack.Screen name="O/L Subjects" component={OLSubjectsScreen} />
-			<Stack.Screen name="A/L Subjects" component={ALSubjectsScreen} />
+			<Stack.Screen
+				name="O/L Subjects"
+				component={OLSubjectsScreen}
+				options={{ headerTitleAlign: 'center' }}
+			/>
+			<Stack.Screen
+				name="A/L Subjects"
+				component={ALSubjectsScreen}
+				options={{ headerTitleAlign: 'center' }}
+			/>
 			<Stack.Screen name="Other Courses" component={OtherPages} />
 			<Stack.Screen
 				name="SubjectQuestionsScreen"
 				component={SubjectQuestionsScreen}
-				options={{ title: 'A/L Biology' }}
+				options={{ title: 'Questions', headerTitleAlign: 'center' }}
 			/>
 			<Stack.Screen
 				name="AskQuestionScreen"
