@@ -9,6 +9,8 @@ import { AskQuestionScreen } from '../screens/AskQuestionScreen';
 import { AnswerQuestion } from '../screens/AnswerQuestion';
 import { ExamScreen } from '../screens/ExamScreen';
 import { OtherPages } from '../screens/OtherPages';
+import { FaceExamPage1 } from '../screens/FaceExamPage1';
+import { FaceExamPage2 } from '../screens/FaceExamPage2';
 import { Ionicons } from '@expo/vector-icons';
 
 const Stack = createStackNavigator();
@@ -53,6 +55,8 @@ export function HomeStack({ navigation }) {
 				component={ExamScreen}
 				options={{ title: 'Exams & Tests' }}
 			/>
+			<Stack.Screen name="FaceExamPage1" component={FaceExamPage1} />
+			<Stack.Screen name="FaceExamPage2" component={FaceExamPage2} />
 		</Stack.Navigator>
 	);
 }
