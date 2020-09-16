@@ -36,7 +36,6 @@ export function SearchPapers({navigation}){
         
         />
         </View>
-
         <View style={{marginBottom: 20,  marginLeft: 20,
 		            marginRight: 20,
                     marginTop: 20,
