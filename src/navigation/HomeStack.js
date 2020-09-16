@@ -11,6 +11,8 @@ import { ExamScreen } from '../screens/ExamScreen';
 import { OtherPages } from '../screens/OtherPages';
 import { FaceExamPage1 } from '../screens/FaceExamPage1';
 import { FaceExamPage2 } from '../screens/FaceExamPage2';
+import { SearchPapers } from '../screens/SearchPapers';
+import { AddPapers } from '../screens/AddPapers';
 import { Ionicons } from '@expo/vector-icons';
 
 const Stack = createStackNavigator();
@@ -38,6 +40,7 @@ export function HomeStack({ navigation }) {
 				}}
 			/>
 			<Stack.Screen name="Test" component={TestScreen} />
+
 			<Stack.Screen
 				name="O/L Subjects"
 				component={OLSubjectsScreen}
@@ -85,6 +88,16 @@ export function HomeStack({ navigation }) {
 				name="FaceExamPage2"
 				component={FaceExamPage2}
 				options={{ title: 'End', headerTitleAlign: 'center' }}
+			/>
+			<Stack.Screen
+				name="SearchPapers"
+				component={SearchPapers}
+				options={{ title: 'Search Papers', headerTitleAlign: 'center' }}
+			/>
+			<Stack.Screen
+				name="AddPapers"
+				component={AddPapers}
+				options={{ title: 'Add Paper', headerTitleAlign: 'center' }}
 			/>
 		</Stack.Navigator>
 	);

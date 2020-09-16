@@ -79,7 +79,7 @@ export function HomeScreen({ navigation }) {
 				</TouchableOpacity>
 				<TouchableOpacity
 					style={{ flex: 1 }}
-					onPress={() => navigation.navigate('Test')}>
+					onPress={() => navigation.navigate('SearchPapers')}>
 					<View
 						style={{
 							flex: 1,
