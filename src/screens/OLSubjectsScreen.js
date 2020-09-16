@@ -36,7 +36,9 @@ export function OLSubjectsScreen({ navigation }) {
 				}}>
 				<TouchableOpacity
 					style={{ flex: 1 }}
-					onPress={() => navigation.navigate('Test')}>
+					onPress={() =>
+						navigation.navigate('SubjectQuestionsScreen')
+					}>
 					<View
 						style={{
 							flex: 1,
@@ -51,7 +53,9 @@ export function OLSubjectsScreen({ navigation }) {
 				</TouchableOpacity>
 				<TouchableOpacity
 					style={{ flex: 1 }}
-					onPress={() => navigation.navigate('Test')}>
+					onPress={() =>
+						navigation.navigate('SubjectQuestionsScreen')
+					}>
 					<View
 						style={{
 							flex: 1,
@@ -73,7 +77,9 @@ export function OLSubjectsScreen({ navigation }) {
 				}}>
 				<TouchableOpacity
 					style={{ flex: 1 }}
-					onPress={() => navigation.navigate('Test')}>
+					onPress={() =>
+						navigation.navigate('SubjectQuestionsScreen')
+					}>
 					<View
 						style={{
 							flex: 1,
@@ -88,7 +94,9 @@ export function OLSubjectsScreen({ navigation }) {
 				</TouchableOpacity>
 				<TouchableOpacity
 					style={{ flex: 1 }}
-					onPress={() => navigation.navigate('Test')}>
+					onPress={() =>
+						navigation.navigate('SubjectQuestionsScreen')
+					}>
 					<View
 						style={{
 							flex: 1,
@@ -114,7 +122,9 @@ export function OLSubjectsScreen({ navigation }) {
 				}}>
 				<TouchableOpacity
 					style={{ flex: 1 }}
-					onPress={() => navigation.navigate('Test')}>
+					onPress={() =>
+						navigation.navigate('SubjectQuestionsScreen')
+					}>
 					<View
 						style={{
 							flex: 1,
@@ -133,7 +143,9 @@ export function OLSubjectsScreen({ navigation }) {
 				</TouchableOpacity>
 				<TouchableOpacity
 					style={{ flex: 1 }}
-					onPress={() => navigation.navigate('Test')}>
+					onPress={() =>
+						navigation.navigate('SubjectQuestionsScreen')
+					}>
 					<View
 						style={{
 							flex: 1,
@@ -159,7 +171,9 @@ export function OLSubjectsScreen({ navigation }) {
 				}}>
 				<TouchableOpacity
 					style={{ flex: 1 }}
-					onPress={() => navigation.navigate('Test')}>
+					onPress={() =>
+						navigation.navigate('SubjectQuestionsScreen')
+					}>
 					<View
 						style={{
 							flex: 1,
@@ -178,7 +192,9 @@ export function OLSubjectsScreen({ navigation }) {
 				</TouchableOpacity>
 				<TouchableOpacity
 					style={{ flex: 1 }}
-					onPress={() => navigation.navigate('Test')}>
+					onPress={() =>
+						navigation.navigate('SubjectQuestionsScreen')
+					}>
 					<View
 						style={{
 							flex: 1,
@@ -204,7 +220,9 @@ export function OLSubjectsScreen({ navigation }) {
 				}}>
 				<TouchableOpacity
 					style={{ flex: 1 }}
-					onPress={() => navigation.navigate('Test')}>
+					onPress={() =>
+						navigation.navigate('SubjectQuestionsScreen')
+					}>
 					<View
 						style={{
 							flex: 1,
@@ -219,7 +237,9 @@ export function OLSubjectsScreen({ navigation }) {
 				</TouchableOpacity>
 				<TouchableOpacity
 					style={{ flex: 1 }}
-					onPress={() => navigation.navigate('Test')}>
+					onPress={() =>
+						navigation.navigate('SubjectQuestionsScreen')
+					}>
 					<View
 						style={{
 							flex: 1,

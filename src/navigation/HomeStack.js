@@ -11,6 +11,8 @@ import { ExamScreen } from '../screens/ExamScreen';
 import { OtherPages } from '../screens/OtherPages';
 import {SearchPapers} from '../screens/SearchPapers';
 import { AddPapers} from '../screens/AddPapers';
+import { FaceExamPage1 } from '../screens/FaceExamPage1';
+import { FaceExamPage2 } from '../screens/FaceExamPage2';
 import { Ionicons } from '@expo/vector-icons';
 
 const Stack = createStackNavigator();
@@ -34,28 +36,59 @@ export function HomeStack({ navigation }) {
 					},
 					headerLeftContainerStyle: { paddingLeft: 10 },
 					title: 'Nenasa Education',
+					headerTitleAlign: 'center',
 				}}
 			/>
 			<Stack.Screen name="Test" component={TestScreen} />
-			<Stack.Screen name="O/L Subjects" component={OLSubjectsScreen} />
-			<Stack.Screen name="A/L Subjects" component={ALSubjectsScreen} />
-			<Stack.Screen name="Other Courses" component={OtherPages} />
 			<Stack.Screen name="Search Papers" component={SearchPapers} />
 			<Stack.Screen name="Add Papers" component={AddPapers} />
 			<Stack.Screen
+				name="O/L Subjects"
+				component={OLSubjectsScreen}
+				options={{ headerTitleAlign: 'center' }}
+			/>
+			<Stack.Screen
+				name="A/L Subjects"
+				component={ALSubjectsScreen}
+				options={{ headerTitleAlign: 'center' }}
+			/>
+			<Stack.Screen
+				name="Other Courses"
+				component={OtherPages}
+				options={{ headerTitleAlign: 'center' }}
+			/>
+			<Stack.Screen
 				name="SubjectQuestionsScreen"
 				component={SubjectQuestionsScreen}
-				options={{ title: 'A/L Biology' }}
+				options={{ title: 'Questions', headerTitleAlign: 'center' }}
 			/>
 			<Stack.Screen
 				name="AskQuestionScreen"
 				component={AskQuestionScreen}
+				options={{
+					title: 'Ask a Question',
+					headerTitleAlign: 'center',
+				}}
 			/>
-			<Stack.Screen name="AnswerQuestion" component={AnswerQuestion} />
+			<Stack.Screen
+				name="AnswerQuestion"
+				component={AnswerQuestion}
+				options={{ title: 'View Answers', headerTitleAlign: 'center' }}
+			/>
 			<Stack.Screen
 				name="ExamScreen"
 				component={ExamScreen}
-				options={{ title: 'Exams & Tests' }}
+				options={{ title: 'Exams & Tests', headerTitleAlign: 'center' }}
+			/>
+			<Stack.Screen
+				name="FaceExamPage1"
+				component={FaceExamPage1}
+				options={{ title: 'Exam', headerTitleAlign: 'center' }}
+			/>
+			<Stack.Screen
+				name="FaceExamPage2"
+				component={FaceExamPage2}
+				options={{ title: 'End', headerTitleAlign: 'center' }}
 			/>
 		</Stack.Navigator>
 	);
