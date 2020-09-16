@@ -9,11 +9,6 @@ export function EditProfile({navigation}){
     const [value3, onChangeText3] = React.useState('');
 
 
-
-
-
-
-
     return(
         <View style={{ flex: 1, padding: 10 }}>
 
