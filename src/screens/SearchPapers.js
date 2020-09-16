@@ -1,29 +1,24 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, FlatList, Platform, TouchableHighlight, Alert } from 'react-native';
 import DropDownPicker from 'react-native-dropdown-picker';
 import RadioGroup,{Radio} from "react-native-radio-input";
 import { SearchBar } from 'react-native-elements';
+import { AntDesign } from '@expo/vector-icons';
+
 
 export function SearchPapers({navigation}){
 
     getChecked = (value) => {
     
         console.log(value)
-      }
-    
-
-    //   updateSearch = (search) => {
-    //     console.log(search)
-    // };  
+      } 
 
     const [search, updateSearch] = React.useState('');
+  
 
     return(
 
         <View style={{flex: 1,}}>
-
-
-        {/* search bars */}
 
         <View style={{
             marginBottom: 20,  marginLeft: 20,
@@ -41,9 +36,6 @@ export function SearchPapers({navigation}){
         
         />
         </View>
-
-
-
 
         <View style={{marginBottom: 20,  marginLeft: 20,
 		            marginRight: 20,
@@ -94,10 +86,7 @@ export function SearchPapers({navigation}){
 
         </View>
 
-
-
-
-        <View 
+            <View 
                     style={{
 					
                     marginLeft: 20,
@@ -170,15 +159,50 @@ export function SearchPapers({navigation}){
             
 
 
+                <FlatList
+                    ItemSeparatorComponent={
+                        Platform.OS !== 'android' &&
+                        (({ highlighted }) => (
+                     <View
+                        style={[
+                            style.separator,
+                            highlighted && { marginLeft: 0 }
+                        ]}
+                        />
+                            ))
+                        }
+        data={[{ title: 'A/L biology Past Paper 2017.pdf', key: 'item1', label: 'Uploded by Nenasa Team'  },
+          {title: 'A/L Cemistry Past Paper 2017.pdf', key: 'item2', label:'Uploded by Nenasa Team'},
+          {title: 'A/L Physics Past Paper 2017.pdf', key: 'item3', label:'Uploded by Nenasa Team'}
+        
+        ]}
+        renderItem={({ item, index, separators }) => (
+            <TouchableHighlight
+                key={item.key}
+                onPress={() => Alert.alert('Successfully submitted')}
+                onShowUnderlay={separators.highlight}
+                onHideUnderlay={separators.unhighlight}>
+                <View style={{ backgroundColor: 'white',  marginLeft: 20, marginRight:20, flexDirection: "row", marginTop: 5,}}>
+                    <View style={{marginLeft: 25, marginTop: 15, marginBottom: 15,}}>
 
+                        <AntDesign name="pdffile1" size={50} color="black" />
+                    </View>
+                    <View style={{alignItems: "center", marginLeft: 30, justifyContent: "center", marginTop: 3, marginBottom: 3,}}>
+
+                        <Text>{item.title}</Text>
+                        <Text>{item.label}</Text>
+                    </View>
+                </View>
+            </TouchableHighlight>
+        )}
+/>
 
 
                 
+        <TouchableOpacity style={{justifyContent: "flex-end", alignItems: "flex-end", marginRight: 20,}} activeOpacity={0.5} onPress={() => navigation.navigate('Add Papers')}>
+            <AntDesign name="pluscircle" size={50} color="black" />
 
-
-
-
-
+        </TouchableOpacity>
 
         </View>
     );
