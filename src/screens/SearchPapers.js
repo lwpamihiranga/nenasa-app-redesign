@@ -86,7 +86,7 @@ export function SearchPapers({navigation}){
 
         </View>
 
-            <View 
+                <View 
                     style={{
 					
                     marginLeft: 20,
