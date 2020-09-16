@@ -2,7 +2,7 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { ProfileScreen } from '../screens/ProfileScreen';
 import { TestScreen } from '../screens/TestScreen';
-import {EditProfile} from '../screens/EditProfile';
+import { EditProfile } from '../screens/EditProfile';
 import { Ionicons } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
 
@@ -32,16 +32,21 @@ export function ProfileStack({ navigation }) {
 								name="edit"
 								size={28}
 								color="black"
-								onPress={() => navigation.navigate('User')}
+								onPress={() =>
+									navigation.navigate('EditProfile')
+								}
 							/>
 						);
 					},
 					headerRightContainerStyle: { paddingRight: 15 },
 				}}
 			/>
+			<Stack.Screen
+				name="EditProfile"
+				component={EditProfile}
+				options={{ title: 'Update Profie', headerTitleAlign: 'center' }}
+			/>
 			<Stack.Screen name="Test" component={TestScreen} />
-			<Stack.Screen name="User" component={EditProfile} />
-
 		</Stack.Navigator>
 	);
 }
