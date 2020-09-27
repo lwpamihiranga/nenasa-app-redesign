@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import { RadioButton, TextInput } from 'react-native-paper';
 
 export function CreateExamAnswerCard({ navigation, createExamAnswerCard }) {
