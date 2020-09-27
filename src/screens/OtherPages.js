@@ -8,6 +8,16 @@ import { Foundation } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
 
 export function OtherPages({ navigation }) {
+
+
+	let general = "සාමාන්‍ය  IT";
+		let human = "මානව සම්පත් ";
+		let leader = "නායකත්ව වැඩසටහන්";
+		let vocal = "වාචික පුහුණුව";
+		let psychology = "මනෝවිද්යාව";
+		let hardware = "දෘඩාංග පාඨමාලා";
+		let personal = "පුද්ගලික සංවර්ධනය";
+
 	return (
 		<View style={{ flex: 1, margin: 10 }}>
 			<View

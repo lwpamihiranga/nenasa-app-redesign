@@ -7,6 +7,18 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 
 export function OLSubjectsScreen({ navigation }) {
+
+	let religion = "ආගම"; 
+	let sinhala = "සිංහල";
+	let english = "ඉංග්‍රීසි";
+	let mathematics = "ගණිතය";
+	let science = "විද්යාව";
+	let art = "කලාව";
+	let drama = "නාට්‍ය";
+	let dancing = "නැටුම්";
+	let music = "සංගීත";
+
+
 	return (
 		<View style={{ flex: 1, margin: 10 }}>
 			<View

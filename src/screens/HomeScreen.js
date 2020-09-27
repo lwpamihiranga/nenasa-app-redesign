@@ -6,6 +6,14 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 
 export function HomeScreen({ navigation }) {
+
+	let ol= "සාමාන්‍ය පෙළ";
+	let al= "උසස් පෙළ";
+	let other= "වෙනත් පාඨමාලා";
+	let paper= "ප්‍රශ්න පත්‍ර පිටුව";
+	let exam= "විභාග පිටුව";
+
+
 	return (
 		<View style={{ flex: 1, margin: 10 }}>
 			<StatusBar style="dark" backgroundColor="#adadad" />

@@ -7,6 +7,30 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 
 export function ALSubjectsScreen({ navigation }) {
+
+	let science_subjects = "විද්‍යා විෂයයන්";
+		let Biology = "ජීව විද්‍යාව";
+		let chemistry = "රසායන විද්‍යාව";
+		let combined_maths = "සංයුක්ත ගණිතය";
+		let physics = "භෞතික විද්‍යාව";
+		let agriculture = "කෘෂිකර්ම";
+		let commerce_subjects = "වාණිජ විෂයයන්";
+		let accounting = "ගිණුම්කරණය";
+		let economics = "ආර්ථික විද්‍යාව";
+		let business_management = "ව්යාපාර කළමනාකරණය";
+		let art_subjects = "කලා විෂයයන්";
+		let sinhala = "සිංහල";
+		let BC = "බෞද්ධ සංස්කෘතිය";
+		let art = "චිත්ර";
+		let drama = "නාට්‍ය";
+		let eng_lit = "ඉංග්‍රීසි සාහිත්‍යය";
+		let technology_subjects = "තාක්ෂණ විෂයයන්";
+		let biotechnology = "ජෛව තාක්ෂණය";
+		let sft = "තාක්ෂණය සඳහා විද්‍යාව";
+		let eng_technology = "ඉංජිනේරු තාක්ෂණය";
+		
+
+
 	return (
 		<View style={{ flex: 1, margin: 10 }}>
 			<View
