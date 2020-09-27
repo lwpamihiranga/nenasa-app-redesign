@@ -26,11 +26,8 @@ export function AnswerQuestionCard({ navigation, exam }) {
 		<TouchableOpacity style={styles.card}>
 			<Text style={styles.text}>{exam.text}</Text>
 			<View style={styles.upperhalf}>
-				
-			
 			</View>
 			<View style={styles.lowerhalf}>
-				
 				<View style={styles.allCircle}>
 					<FontAwesome
 						name="circle"

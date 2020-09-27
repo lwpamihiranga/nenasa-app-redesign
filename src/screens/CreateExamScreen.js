@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import uuid from 'uuid-random';
 import {
 	StyleSheet,
 	Text,
@@ -7,7 +8,6 @@ import {
 	Alert,
 	TouchableOpacity,
 } from 'react-native';
-import { Dropdown } from 'react-native-material-dropdown-v2';
 import {
 	AntDesign,
 	MaterialCommunityIcons,
@@ -15,6 +15,7 @@ import {
 } from '@expo/vector-icons';
 import { Picker } from '@react-native-community/picker';
 import { CreateExamQuestionCard } from '../components/CreateExamQuestionCard';
+import { ScrollView } from 'react-native-gesture-handler';
 
 export function CreateExamScreen({ navigation }) {
 	const [title, setTitle] = useState('');
@@ -22,6 +23,7 @@ export function CreateExamScreen({ navigation }) {
 	const [min, setMin] = useState('');
 	const [level, setLevel] = useState('');
 	const [medium, setMedium] = useState('');
+	const [questionCards, setQuestionCards] = useState([]);
 
 	const onChangeTitle = (titleValue) => {
 		setTitle(titleValue);
@@ -38,6 +40,14 @@ export function CreateExamScreen({ navigation }) {
 	const onChangeMedium = (mediumValue) => {
 		setMedium(mediumValue);
 	};
+
+	let addQuestionCard = () => {
+		setQuestionCards([
+			...questionCards,
+			<CreateExamQuestionCard key={uuid()} />,
+		]);
+	};
+
 	return (
 		<View style={styles.container}>
 			<View style={styles.topHalf}>
@@ -120,11 +130,13 @@ export function CreateExamScreen({ navigation }) {
 					style={styles.bigBottomdropIcon}
 				/>
 			</View>
-			<CreateExamQuestionCard />
+			<View style={styles.middle}>
+				<ScrollView>{questionCards}</ScrollView>
+			</View>
 			<View style={styles.lowerHalf}>
 				<TouchableOpacity
 					style={styles.addQuestion}
-					onPress={() => Alert.alert('Successfully submitted')}>
+					onPress={addQuestionCard}>
 					<AntDesign name="pluscircle" size={24} color="black" />
 					<Text style={styles.buttonText}>Add a new Question</Text>
 				</TouchableOpacity>
@@ -212,16 +224,21 @@ const styles = StyleSheet.create({
 		marginTop: 250,
 		marginStart: 377,
 	},
+	middle: {
+		height: '45%',
+		marginBottom: 60,
+	},
 	lowerHalf: {
 		flexDirection: 'row',
-		marginBottom: 10,
 		position: 'absolute',
 		bottom: 0,
+		backgroundColor: 'white',
 	},
 	addQuestion: {
 		width: '45%',
 		padding: 10,
 		marginTop: 20,
+		marginBottom: 10,
 		marginHorizontal: 10,
 		backgroundColor: '#FECC5D',
 		flexDirection: 'row',
@@ -234,6 +251,7 @@ const styles = StyleSheet.create({
 		marginHorizontal: 10,
 		backgroundColor: '#FECC5D',
 		flexDirection: 'row',
+		marginBottom: 10,
 		justifyContent: 'space-evenly',
 	},
 	buttonText: { color: '#000', fontSize: 15 },

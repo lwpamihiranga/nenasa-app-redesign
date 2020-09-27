@@ -7,24 +7,19 @@ import {
 	Alert,
 	TouchableOpacity,
 	FlatList,
-	Button,
 } from 'react-native';
-import { Dropdown } from 'react-native-material-dropdown-v2';
 import { Entypo, FontAwesome } from '@expo/vector-icons';
 import { ScrollView } from 'react-native-gesture-handler';
 import uuid from 'uuid-random';
-import  { useState } from 'react';
+import { useState } from 'react';
 import { AnswerQuestionCard } from '../components/AnswerQuestionCard';
-
-
-
 
 export function AnswerQuestion({ navigation }) {
 	const [value, onChangeText] = React.useState('');
 	const [exams, setExams] = useState([
 		{
 			id: uuid(),
-			text: 'Answer is cut',
+			text: '1. Answer is cut',
 			user: {
 				name: 'Anjula Dilshani',
 			},
@@ -32,7 +27,8 @@ export function AnswerQuestion({ navigation }) {
 		},
 		{
 			id: uuid(),
-			text: 'same word for present tense,past tense and past participal',	
+			text:
+				'2. Same word for present tense,past tense and past participal',
 			user: {
 				name: 'Chathu',
 			},
@@ -40,7 +36,7 @@ export function AnswerQuestion({ navigation }) {
 		},
 		{
 			id: uuid(),
-			text: 'same answer-cut',	
+			text: '3. Same answer-cut',
 			user: {
 				name: 'Pasindu',
 			},
@@ -48,33 +44,37 @@ export function AnswerQuestion({ navigation }) {
 		},
 		{
 			id: uuid(),
-			text: 'same word for past tense',
+			text: '4. Same word for past tense',
 			user: {
 				name: 'Kishanika Raj',
 			},
 			date: 'Jan 01 2019',
 		},
 	]);
+
 	return (
 		<View style={styles.container}>
 			<View
 				style={{
-					backgroundColor: '#d3d3d3',
 					marginLeft: 20,
 					marginRight: 20,
 				}}>
 				<View
 					style={{
 						flexDirection: 'row',
+						marginTop: 20,
 					}}>
-					<FontAwesome
-						style={{ marginLeft: 15, marginTop: 30 }}
-						name="user-circle-o"
-						size={45}
-						color="black"
-					/>
+					<View style={styles.allCircle}>
+						<FontAwesome
+							name="circle"
+							size={50}
+							color="#892667"
+							style={styles.circle}
+						/>
+						<Text style={styles.firstLetter}>B</Text>
+					</View>
 					<Text
-						style={{ fontSize: 20, marginTop: 35, marginLeft: 20 }}>
+						style={{ fontSize: 20, marginTop: 5, marginLeft: 20 }}>
 						Bathiya Jayasanke
 					</Text>
 				</View>
@@ -82,8 +82,7 @@ export function AnswerQuestion({ navigation }) {
 					style={{
 						fontSize: 15,
 						marginTop: 0,
-						marginLeft: 75,
-						marginBottom: 20,
+						marginLeft: 65,
 					}}>
 					17,Dec,2019
 				</Text>
@@ -100,9 +99,9 @@ export function AnswerQuestion({ navigation }) {
 			</Text>
 			<Text
 				style={{
-					fontSize: 23,
+					fontSize: 18,
 					marginTop: 30,
-					marginLeft: 140,
+					marginLeft: 35,
 					color: '#F7BE56',
 				}}>
 				{' '}
@@ -110,31 +109,31 @@ export function AnswerQuestion({ navigation }) {
 			</Text>
 			<ScrollView
 				style={{
-					backgroundColor: '#d3d3d3',
-					marginLeft: 20,
-					marginRight: 20,
-					marginTop: 10,
+					paddingTop: 10,
 					maxHeight: 330,
 				}}>
 				<FlatList
-				data={exams}
-				renderItem={({ item }) => <AnswerQuestionCard exam={item} />}
-				keyExtractor={(item, index) => index.toString()}
-			/>
+					data={exams}
+					renderItem={({ item }) => (
+						<AnswerQuestionCard exam={item} />
+					)}
+					keyExtractor={(item, index) => index.toString()}
+				/>
 			</ScrollView>
 
-			<View style={{ flexDirection: 'row' }}>
+			<View style={{ flexDirection: 'row', marginTop: 55 }}>
 				<TextInput
 					style={{
-						backgroundColor: '#d3d3d3',
+						borderColor: 'gray',
+						borderWidth: 0.5,
 						marginTop: 20,
 						marginLeft: 20,
-						height: 70,
-						width: 320,
+						height: 50,
+						width: '80%',
 					}}
 					onChangeText={(text) => onChangeText(text)}
 					value={value}
-					placeholder="Answer here......"
+					placeholder="  Answer here......"
 				/>
 				<TouchableOpacity
 					style={{
@@ -170,5 +169,19 @@ const styles = StyleSheet.create({
 		padding: 10,
 		fontSize: 18,
 		height: 44,
+	},
+	allCircle: {
+		position: 'relative',
+		justifyContent: 'center',
+		alignItems: 'center',
+	},
+	firstLetter: {
+		fontSize: 20,
+		color: 'white',
+		position: 'absolute',
+	},
+	circle: {
+		alignItems: 'center',
+		position: 'relative',
 	},
 });

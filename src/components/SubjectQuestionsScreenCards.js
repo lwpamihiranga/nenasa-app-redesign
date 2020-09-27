@@ -25,16 +25,16 @@ export function SubjectQuestionsScreenCards({ question }) {
 	};
 
 	return (
-		<TouchableOpacity
-			style={styles.card}
-			onPress={() => navigation.navigate('AnswerQuestion')}>
+		<View style={styles.card}>
 			<Text style={styles.text}>{question.text}</Text>
 			<View style={styles.lowerhalf}>
 				<View>
 					<Text style={styles.noOfAnswers}>
 						{question.noOfAnswers} answers
 					</Text>
-					<TouchableOpacity style={styles.button}>
+					<TouchableOpacity
+						style={styles.button}
+						onPress={() => navigation.navigate('AnswerQuestion')}>
 						<Text>Answer</Text>
 						<AntDesign name="arrowright" size={20} color="black" />
 					</TouchableOpacity>
@@ -57,7 +57,7 @@ export function SubjectQuestionsScreenCards({ question }) {
 					<Text style={styles.date}>{question.date}</Text>
 				</View>
 			</View>
-		</TouchableOpacity>
+		</View>
 	);
 }
 

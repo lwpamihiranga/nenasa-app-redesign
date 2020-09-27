@@ -52,11 +52,11 @@ export function FaceExamPage2({ navigation }) {
 				timeLabels={{ m: null, s: null }}
 				showSeparator
 			/>
-			<Text style={{ marginTop: 30, fontSize: 25, marginLeft: 20 }}>
+			<Text style={{ marginTop: 20, fontSize: 23, marginLeft: 20 }}>
 				What is the national language of india?
 			</Text>
 			<RadioButtonRN
-				style={{ marginLeft: 10, marginTop: 30, marginRight: 10 }}
+				style={{ marginLeft: 10, marginTop: 10, marginRight: 10 }}
 				data={data}
 				selectedBtn={(e) => console.log(e)}
 			/>
@@ -71,10 +71,10 @@ export function FaceExamPage2({ navigation }) {
 							marginRight: 5,
 							justifyContent: 'center',
 							alignItems: 'center',
-							maxWidth: 100,
-							maxHeight: 50,
-							marginTop: 40,
-							marginLeft: 30,
+							maxWidth: 80,
+							maxHeight: 40,
+							marginTop: 10,
+							marginLeft: 15,
 						}}>
 						<AntDesign name="banckward" size={24} color="black" />
 					</View>
@@ -101,10 +101,10 @@ export function FaceExamPage2({ navigation }) {
 							marginRight: 5,
 							justifyContent: 'center',
 							alignItems: 'center',
-							maxWidth: 100,
-							maxHeight: 50,
-							marginTop: 40,
-							marginLeft: 70,
+							maxWidth: 80,
+							maxHeight: 40,
+							marginTop: 10,
+							marginLeft: 115,
 						}}>
 						<AntDesign name="forward" size={24} color="black" />
 					</View>
