@@ -1,14 +1,5 @@
 import React from 'react';
-import {
-	StyleSheet,
-	Text,
-	View,
-	TextInput,
-	Alert,
-	TouchableOpacity,
-	FlatList,
-	Button,
-} from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import RadioButtonRN from 'radio-buttons-react-native';
 import { AntDesign } from '@expo/vector-icons';
 import CountDown from 'react-native-countdown-component';
@@ -50,7 +41,7 @@ export function FaceExamPage1({ navigation }) {
 				timeLabels={{ m: null, s: null }}
 				showSeparator
 			/>
-			<Text style={{ marginTop: 30, fontSize: 25, marginLeft: 20 }}>
+			<Text style={{ marginTop: 20, fontSize: 24, marginLeft: 20 }}>
 				What is the national sport of India?
 			</Text>
 			<RadioButtonRN
@@ -68,10 +59,10 @@ export function FaceExamPage1({ navigation }) {
 						marginRight: 5,
 						justifyContent: 'center',
 						alignItems: 'center',
-						maxWidth: 100,
-						maxHeight: 50,
-						marginTop: 40,
-						marginLeft: 300,
+						maxWidth: 80,
+						maxHeight: 40,
+						marginTop: 10,
+						marginLeft: 320,
 					}}>
 					<AntDesign name="forward" size={24} color="black" />
 				</View>

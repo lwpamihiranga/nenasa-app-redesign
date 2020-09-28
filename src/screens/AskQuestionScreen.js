@@ -3,33 +3,32 @@ import {
 	StyleSheet,
 	Text,
 	View,
-	Button,
 	TextInput,
 	Alert,
 	TouchableOpacity,
 } from 'react-native';
 import { Dropdown } from 'react-native-material-dropdown-v2';
-import { AntDesign } from '@expo/vector-icons';
+import { AntDesign, Ionicons } from '@expo/vector-icons';
 
 export function AskQuestionScreen({ navigation }) {
 	let data = [
 		{
-			value: 'grade 6',
+			value: 'Grade 6',
 		},
 		{
-			value: 'grade 7',
+			value: 'Grade 7',
 		},
 		{
-			value: 'grade 8',
+			value: 'Grade 8',
 		},
 		{
-			value: 'grade 9',
+			value: 'Grade 9',
 		},
 		{
-			value: 'grade 10',
+			value: 'Grade 10',
 		},
 		{
-			value: 'grade 11',
+			value: 'Grade 11',
 		},
 		{
 			value: 'History',
@@ -55,60 +54,56 @@ export function AskQuestionScreen({ navigation }) {
 	return (
 		<View style={styles.container}>
 			<View style={styles.dropdow}>
-			<Dropdown
-				
-				label="Select grade or lesson"
-				data={data}
-			/>
-			
+				<Dropdown label="Select grade or lesson" data={data} />
+				<Ionicons
+					name="md-arrow-dropdown"
+					size={24}
+					color="black"
+					style={styles.bigBottomdropIcon}
+				/>
 			</View>
 			<TextInput
 				style={styles.textQ}
 				onChangeText={(text) => onChangeText(text)}
 				value={value}
-				placeholder="Write here......"
+				placeholder="What is your question?"
 				numberOfLines={2}
 				multiline={false}
 			/>
-
 			<TouchableOpacity
 				style={{
 					flex: 1,
-					maxHeight: 100,
-					marginTop: 20,
-					marginLeft: 20,
-					marginRight: 20,
+					maxHeight: 80,
+					marginTop: 15,
+					marginLeft: 15,
+					marginRight: 15,
 				}}>
 				<View
 					style={{
 						flex: 1,
 						backgroundColor: '#d3d3d3',
-						marginRight: 5,
 						justifyContent: 'center',
 						alignItems: 'center',
 					}}>
 					<AntDesign name="upload" size={24} color="black" />
-
-					<Text>upload a Image</Text>
+					<Text>Upload a Image</Text>
 					<Text>(Optional)</Text>
 				</View>
 			</TouchableOpacity>
 			<TouchableOpacity
 				style={{
-					flex: 1,
-					maxHeight: 60,
-					marginTop: 20,
-					marginLeft: 20,
-					marginRight: 20,
+					width: '90%',
+					alignSelf: 'center',
+					marginTop: 120,
 				}}
 				onPress={() => Alert.alert('Successfully submitted')}>
 				<View
 					style={{
 						flex: 1,
 						backgroundColor: '#F7BE56',
-						marginRight: 5,
 						justifyContent: 'center',
 						alignItems: 'center',
+						paddingVertical: 25,
 					}}>
 					<Text style={{ color: '#f0f8ff', fontSize: 18 }}>
 						Submit
@@ -125,19 +120,22 @@ const styles = StyleSheet.create({
 		backgroundColor: '#fff',
 	},
 	dropdow: {
-		marginLeft: 20,
-		marginRight: 20,
-		marginTop: 50,
-		height: 62,
-		backgroundColor:'#d3d3d3',
-		
+		marginLeft: 15,
+		marginRight: 15,
+		marginTop: 15,
+		height: 60,
+		backgroundColor: '#E5E5E5',
+	},
+	bigBottomdropIcon: {
+		position: 'absolute',
+		marginTop: 18,
+		marginStart: 340,
 	},
 	textQ: {
-		marginLeft: 20,
-		marginRight: 20,
+		marginLeft: 15,
+		marginRight: 15,
+		paddingLeft: 15,
 		marginTop: 20,
-		borderBottomColor: '#000000',
-		borderBottomWidth: 1,
 		height: 300,
 		borderColor: 'gray',
 		borderWidth: 1,

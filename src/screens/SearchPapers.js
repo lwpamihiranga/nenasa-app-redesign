@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-	StyleSheet,
 	Text,
 	View,
 	TouchableOpacity,
@@ -15,21 +14,19 @@ import { SearchBar } from 'react-native-elements';
 import { AntDesign } from '@expo/vector-icons';
 
 export function SearchPapers({ navigation }) {
-	getChecked = (value) => {
+	const getChecked = (value) => {
 		console.log(value);
 	};
-
 	const [search, updateSearch] = React.useState('');
 
 	return (
 		<View style={{ flex: 1 }}>
 			<View
 				style={{
-					marginBottom: 20,
-					marginLeft: 20,
-					marginRight: 20,
-					marginTop: 20,
-					marginBottom: 5,
+					marginBottom: 10,
+					marginLeft: 15,
+					marginRight: 15,
+					marginTop: 10,
 					backgroundColor: '#ffffff',
 				}}>
 				<SearchBar
@@ -37,19 +34,19 @@ export function SearchPapers({ navigation }) {
 					onChangeText={updateSearch}
 					value={search}
 					containerStyle={{
-						backgroundColor: '#f4f4f4',
-						borderBottomColor: '#f4f4f4',
-						borderTopColor: '#f4f4f4',
+						backgroundColor: 'white',
 					}}
+					inputStyle={{
+						backgroundColor: 'white',
+					}}
+					platform={Platform.OS}
 				/>
 			</View>
 			<View
 				style={{
-					marginBottom: 20,
-					marginLeft: 20,
-					marginRight: 20,
-					marginTop: 20,
-					marginBottom: 5,
+					marginLeft: 15,
+					marginRight: 15,
+					marginTop: 10,
 				}}>
 				<DropDownPicker
 					items={[
@@ -103,14 +100,13 @@ export function SearchPapers({ navigation }) {
 					}
 				/>
 			</View>
-
 			<View
 				style={{
-					marginLeft: 20,
-					marginRight: 20,
-					marginTop: 20,
+					marginLeft: 15,
+					marginRight: 15,
+					marginTop: 10,
 				}}>
-				<View style={{ marginBottom: 20 }}>
+				<View style={{ marginBottom: 10 }}>
 					<DropDownPicker
 						items={[
 							{ label: 'Year 6', value: 'Year 6' },
@@ -159,7 +155,8 @@ export function SearchPapers({ navigation }) {
 					flexDirection: 'row',
 					flexGrow: 1,
 					justifyContent: 'space-evenly',
-					marginTop: 20,
+					marginTop: 0,
+					marginBottom: 30,
 				}}>
 				<RadioGroup
 					getChecked={getChecked}
@@ -198,6 +195,21 @@ export function SearchPapers({ navigation }) {
 					{
 						title: 'A/L Cemistry Past Paper 2017.pdf',
 						key: 'item2',
+						label: 'Uploded by Nenasa Team',
+					},
+					{
+						title: 'A/L Physics Past Paper 2017.pdf',
+						key: 'item3',
+						label: 'Uploded by Nenasa Team',
+					},
+					{
+						title: 'A/L Physics Past Paper 2017.pdf',
+						key: 'item3',
+						label: 'Uploded by Nenasa Team',
+					},
+					{
+						title: 'A/L Physics Past Paper 2017.pdf',
+						key: 'item3',
 						label: 'Uploded by Nenasa Team',
 					},
 					{
@@ -252,7 +264,9 @@ export function SearchPapers({ navigation }) {
 				style={{
 					justifyContent: 'flex-end',
 					alignItems: 'flex-end',
-					marginRight: 20,
+					position: 'absolute',
+					bottom: 20,
+					right: 20,
 				}}
 				activeOpacity={0.5}
 				onPress={() => navigation.navigate('AddPapers')}>
