@@ -3,6 +3,8 @@ import { StyleSheet, Text, View, TouchableOpacity, TextInput, Alert } from 'reac
 import RadioGroup,{Radio} from "react-native-radio-input";
 import DropDownPicker from 'react-native-dropdown-picker';
 import { Ionicons } from '@expo/vector-icons';
+import DocumentPicker from 'react-native-document-picker';
+// import DocumentPickerUtil from 'react-native-document-picker';
 import { Entypo } from '@expo/vector-icons';
 
 export function AddPapers(){
@@ -30,6 +32,42 @@ getChecked = (value) => {
     
     console.log(value)
   }
+
+
+async function pickDocument(){
+    try{
+
+        const result = await DocumentPicker.pick({type:[DocumentPicker.types.allFiles]});
+        console.log('result', result);
+    }catch(err){
+        if(DocumentPicker.isCancel(err)){
+
+        }else{
+            throw err;
+        }
+    }
+}
+
+
+
+
+
+// async  pickDocument() {
+//     return new Promise((resolve, reject) => {
+//       DocumentPicker.show({ filetype: [DocumentPickerUtil.allFiles()] }, (error,res) => {
+//         if (error) {
+//           // Also returns an error if the user doesn't pick a file
+//           // so just resolve with null.
+//           console.info('pickDocument error:', error);
+//           resolve(null);
+//           return;
+//         }
+
+//         resolve(res);
+//       });
+//     });
+//   }
+
 
 
 const [value, onChangeText] = React.useState('');
@@ -156,7 +194,7 @@ const [val, onChangeItem] = React.useState('');
                 marginRight: 20,
                 marginTop: 20,
                 backgroundColor: '#aba9a6',}}
-                onPress={() => Alert.alert('Successfully submitted')}
+                onPress={pickDocument}
             >
                 <Text>Upload File</Text>
             </TouchableOpacity>
