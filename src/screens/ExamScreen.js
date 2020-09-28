@@ -62,7 +62,7 @@ export function ExamScreen({ navigation }) {
 				size={50}
 				color="black"
 				style={styles.floatButton}
-				onPress={() => console.log('adsf')}
+				onPress={() => navigation.navigate('AddExam')}
 			/>
 		</SafeAreaView>
 	);
