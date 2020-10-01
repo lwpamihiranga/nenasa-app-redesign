@@ -4,6 +4,7 @@ import RadioGroup, { Radio } from 'react-native-radio-input';
 import DropDownPicker from 'react-native-dropdown-picker';
 import { Ionicons } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
+import * as DocumentPicker from 'expo-document-picker';
 
 export function AddPapers() {
 	let year = [
@@ -27,6 +28,12 @@ export function AddPapers() {
 	const [valuepapers, onChangeTextdesc] = React.useState('');
 
 	const [val, onChangeItem] = React.useState('');
+
+	handleUpload = () => {
+		DocumentPicker.getDocumentAsync().then((res) => {
+			console.log(res);
+		});
+	};
 
 	return (
 		<View style={{ flex: 1 }}>
@@ -152,7 +159,7 @@ export function AddPapers() {
 					marginRight: 20,
 					marginTop: 10,
 				}}
-				onPress={() => Alert.alert('Successfully submitted')}>
+				onPress={handleUpload}>
 				<Text>Upload File</Text>
 			</TouchableOpacity>
 			<View

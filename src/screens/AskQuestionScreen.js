@@ -6,9 +6,11 @@ import {
 	TextInput,
 	Alert,
 	TouchableOpacity,
+	Image,
 } from 'react-native';
 import { Dropdown } from 'react-native-material-dropdown-v2';
 import { AntDesign, Ionicons } from '@expo/vector-icons';
+import * as DocumentPicker from 'expo-document-picker';
 
 export function AskQuestionScreen({ navigation }) {
 	let data = [
@@ -51,6 +53,15 @@ export function AskQuestionScreen({ navigation }) {
 	];
 	const [value, onChangeText] = React.useState('');
 
+	const [imageUri, setImage] = React.useState('');
+
+	handleUpload = () => {
+		DocumentPicker.getDocumentAsync({ type: 'image/*' }).then((res) => {
+			console.log(res.uri);
+			setImage(res.uri);
+		});
+	};
+
 	return (
 		<View style={styles.container}>
 			<View style={styles.dropdow}>
@@ -77,7 +88,8 @@ export function AskQuestionScreen({ navigation }) {
 					marginTop: 15,
 					marginLeft: 15,
 					marginRight: 15,
-				}}>
+				}}
+				onPress={handleUpload}>
 				<View
 					style={{
 						flex: 1,
@@ -90,6 +102,16 @@ export function AskQuestionScreen({ navigation }) {
 					<Text>(Optional)</Text>
 				</View>
 			</TouchableOpacity>
+			<Image
+				source={{ uri: imageUri }}
+				style={{
+					flex: 1,
+					width: 100,
+					height: 100,
+					marginLeft: 150,
+					marginTop: 10,
+				}}
+			/>
 			<TouchableOpacity
 				style={{
 					width: '90%',
