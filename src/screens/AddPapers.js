@@ -27,14 +27,15 @@ export function AddPapers() {
 	const [value, onChangeText] = React.useState('');
 	const [valuepapers, onChangeTextdesc] = React.useState('');
 
-	const [val, onChangeItem] = React.useState('');
-
+    const [val, onChangeItem] = React.useState('');
+   
 	handleUpload = () => {
 		DocumentPicker.getDocumentAsync().then((res) => {
-			console.log(res);
+			console.log(res.name);
+			Alert.alert('Successfully uploaded', res.name)
 		});
-	};
-
+    };
+    
 	return (
 		<View style={{ flex: 1 }}>
 			<View
@@ -149,7 +150,6 @@ export function AddPapers() {
 				numberOfLines={2}
 				multiline={false}
 			/>
-
 			<TouchableOpacity
 				style={{
 					alignItems: 'center',
@@ -162,6 +162,7 @@ export function AddPapers() {
 				onPress={handleUpload}>
 				<Text>Upload File</Text>
 			</TouchableOpacity>
+           
 			<View
 				style={{
 					marginLeft: 20,
