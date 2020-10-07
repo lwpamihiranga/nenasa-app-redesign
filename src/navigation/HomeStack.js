@@ -14,6 +14,7 @@ import { FaceExamPage2 } from '../screens/FaceExamPage2';
 import { SearchPapers } from '../screens/SearchPapers';
 import { AddPapers } from '../screens/AddPapers';
 import { Ionicons } from '@expo/vector-icons';
+import { FontAwesome } from '@expo/vector-icons';
 
 const Stack = createStackNavigator();
 
@@ -37,6 +38,16 @@ export function HomeStack({ navigation }) {
 					headerLeftContainerStyle: { paddingLeft: 10 },
 					title: 'Nenasa Education',
 					headerTitleAlign: 'center',
+					headerRight: () => {
+						return (
+							<FontAwesome
+								name="exchange"
+								size={24}
+								color="black"
+							/>
+						);
+					},
+					headerRightContainerStyle: { paddingRight: 10 },
 				}}
 			/>
 			<Stack.Screen name="Test" component={TestScreen} />
