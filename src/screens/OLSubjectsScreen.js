@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { FontAwesome5, MaterialIcons } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
@@ -6,18 +6,23 @@ import { SimpleLineIcons } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 
-export function OLSubjectsScreen({ navigation }) {
+export function OLSubjectsScreen({ route, navigation }) {
+	const [isSinhala, setIsSinhala] = useState(false);
 
-	let religion = "ආගම"; 
-	let sinhala = "සිංහල";
-	let english = "ඉංග්‍රීසි";
-	let mathematics = "ගණිතය";
-	let science = "විද්යාව";
-	let art = "කලාව";
-	let drama = "නාට්‍ය";
-	let dancing = "නැටුම්";
-	let music = "සංගීත";
+	let religion = 'ආගම';
+	let english = 'ඉංග්‍රීසි';
+	let sinhala = 'සිංහල';
+	let science = 'විද්යාව';
+	let informationTechnology = 'තොරතුරු තාක්ෂණය';
+	let mathematics = 'ගණිතය';
+	let art = 'කලාව';
+	let drama = 'නාට්‍ය';
+	let dancing = 'නැටුම්';
+	let music = 'සංගීතය';
 
+	useEffect(() => {
+		setIsSinhala(route.params.isSinhala);
+	});
 
 	return (
 		<View style={{ flex: 1, margin: 10 }}>
@@ -60,7 +65,11 @@ export function OLSubjectsScreen({ navigation }) {
 							alignItems: 'center',
 						}}>
 						<FontAwesome5 name="cross" size={50} color="black" />
-						<Text>Religious</Text>
+						{isSinhala === true ? (
+							<Text>{religion}</Text>
+						) : (
+							<Text>Religious</Text>
+						)}
 					</View>
 				</TouchableOpacity>
 				<TouchableOpacity

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { FontAwesome5, MaterialIcons } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
@@ -6,30 +6,35 @@ import { SimpleLineIcons } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 
-export function ALSubjectsScreen({ navigation }) {
+export function ALSubjectsScreen({ route, navigation }) {
+	const [isSinhala, setIsSinhala] = useState(false);
 
-	let science_subjects = "විද්‍යා විෂයයන්";
-		let Biology = "ජීව විද්‍යාව";
-		let chemistry = "රසායන විද්‍යාව";
-		let combined_maths = "සංයුක්ත ගණිතය";
-		let physics = "භෞතික විද්‍යාව";
-		let agriculture = "කෘෂිකර්ම";
-		let commerce_subjects = "වාණිජ විෂයයන්";
-		let accounting = "ගිණුම්කරණය";
-		let economics = "ආර්ථික විද්‍යාව";
-		let business_management = "ව්යාපාර කළමනාකරණය";
-		let art_subjects = "කලා විෂයයන්";
-		let sinhala = "සිංහල";
-		let BC = "බෞද්ධ සංස්කෘතිය";
-		let art = "චිත්ර";
-		let drama = "නාට්‍ය";
-		let eng_lit = "ඉංග්‍රීසි සාහිත්‍යය";
-		let technology_subjects = "තාක්ෂණ විෂයයන්";
-		let biotechnology = "ජෛව තාක්ෂණය";
-		let sft = "තාක්ෂණය සඳහා විද්‍යාව";
-		let eng_technology = "ඉංජිනේරු තාක්ෂණය";
-		
+	let scienceSubjects = 'විද්‍යා විෂයයන්';
+	let biology = 'ජීව විද්‍යාව';
+	let chemistry = 'රසායන විද්‍යාව';
+	let combinedMaths = 'සංයුක්ත ගණිතය';
+	let physics = 'භෞතික විද්‍යාව';
+	let agriculture = 'කෘෂිකර්මය';
+	let informationTechnology = 'තොරතුරු තාක්ෂණය';
+	let commerceSubjects = 'වාණිජ විෂයයන්';
+	let accounting = 'ගිණුම්කරණය';
+	let economics = 'ආර්ථික විද්‍යාව';
+	let businessManagement = 'ව්‍යාපාර කළමනාකරණය';
+	let commerce = 'වාණිජ කළමනාකරණය';
+	let artSubjects = 'කලා විෂයයන්';
+	let sinhala = 'සිංහල';
+	let buddhistCulture = 'බෞද්ධ සංස්කෘතිය';
+	let art = 'චිත්ර';
+	let drama = 'නාට්‍ය';
+	let englishLitereture = 'ඉංග්‍රීසි සාහිත්‍යය';
+	let technologySubjects = 'තාක්ෂණ විෂයයන්';
+	let bioTechnology = 'ජෛව තාක්ෂණය';
+	let scienceForTechnology = 'තාක්ෂණය සඳහා විද්‍යාව';
+	let engineeringTechnology = 'ඉංජිනේරු තාක්ෂණය';
 
+	useEffect(() => {
+		setIsSinhala(route.params.isSinhala);
+	});
 
 	return (
 		<View style={{ flex: 1, margin: 10 }}>
@@ -48,7 +53,7 @@ export function ALSubjectsScreen({ navigation }) {
 						fontSize: 19,
 						fontWeight: 'bold',
 					}}>
-					Science Subjects
+					{isSinhala === true ? scienceSubjects : 'Science Subjects'}
 				</Text>
 			</View>
 
@@ -72,7 +77,11 @@ export function ALSubjectsScreen({ navigation }) {
 							alignItems: 'center',
 						}}>
 						<FontAwesome5 name="dna" size={30} color="black" />
-						<Text>Biology</Text>
+						{isSinhala === true ? (
+							<Text>{biology}</Text>
+						) : (
+							<Text>Biology</Text>
+						)}
 					</View>
 				</TouchableOpacity>
 				<TouchableOpacity
@@ -93,7 +102,13 @@ export function ALSubjectsScreen({ navigation }) {
 							size={30}
 							color="black"
 						/>
-						<Text>Combined Maths</Text>
+						{isSinhala === true ? (
+							<Text style={{ textAlign: 'center', fontSize: 13 }}>
+								{combinedMaths}
+							</Text>
+						) : (
+							<Text>Combined Maths</Text>
+						)}
 					</View>
 				</TouchableOpacity>
 				<TouchableOpacity
@@ -114,7 +129,11 @@ export function ALSubjectsScreen({ navigation }) {
 							size={30}
 							color="black"
 						/>
-						<Text>Physics</Text>
+						{isSinhala === true ? (
+							<Text>{physics}</Text>
+						) : (
+							<Text>Physics</Text>
+						)}
 					</View>
 				</TouchableOpacity>
 			</View>
@@ -143,7 +162,11 @@ export function ALSubjectsScreen({ navigation }) {
 							size={30}
 							color="black"
 						/>
-						<Text>Chemistry</Text>
+						{isSinhala === true ? (
+							<Text>{chemistry}</Text>
+						) : (
+							<Text>Chemistry</Text>
+						)}
 					</View>
 				</TouchableOpacity>
 				<TouchableOpacity
@@ -164,7 +187,11 @@ export function ALSubjectsScreen({ navigation }) {
 							size={30}
 							color="black"
 						/>
-						<Text>Agriculture</Text>
+						{isSinhala === true ? (
+							<Text>{agriculture}</Text>
+						) : (
+							<Text>Agriculture</Text>
+						)}
 					</View>
 				</TouchableOpacity>
 				<TouchableOpacity
@@ -185,7 +212,13 @@ export function ALSubjectsScreen({ navigation }) {
 							size={30}
 							color="black"
 						/>
-						<Text>IT</Text>
+						{isSinhala === true ? (
+							<Text style={{ textAlign: 'center', fontSize: 12 }}>
+								{informationTechnology}
+							</Text>
+						) : (
+							<Text>IT</Text>
+						)}
 					</View>
 				</TouchableOpacity>
 			</View>
@@ -233,7 +266,11 @@ export function ALSubjectsScreen({ navigation }) {
 							size={30}
 							color="black"
 						/>
-						<Text>Accounting</Text>
+						{isSinhala === true ? (
+							<Text> {accounting}</Text>
+						) : (
+							<Text>Accounting</Text>
+						)}
 					</View>
 				</TouchableOpacity>
 				<TouchableOpacity
@@ -254,7 +291,11 @@ export function ALSubjectsScreen({ navigation }) {
 							size={30}
 							color="black"
 						/>
-						<Text>Economics</Text>
+						{isSinhala === true ? (
+							<Text> {economics}</Text>
+						) : (
+							<Text>Economics</Text>
+						)}
 					</View>
 				</TouchableOpacity>
 			</View>
@@ -279,7 +320,11 @@ export function ALSubjectsScreen({ navigation }) {
 							alignItems: 'center',
 						}}>
 						<Ionicons name="ios-business" size={30} color="black" />
-						<Text>Business Mnagement</Text>
+						{isSinhala === true ? (
+							<Text>{businessManagement}</Text>
+						) : (
+							<Text>Business Mnagement</Text>
+						)}
 					</View>
 				</TouchableOpacity>
 				<TouchableOpacity
@@ -300,7 +345,11 @@ export function ALSubjectsScreen({ navigation }) {
 							size={30}
 							color="black"
 						/>
-						<Text>IT</Text>
+						{isSinhala === true ? (
+							<Text>{commerce}</Text>
+						) : (
+							<Text>Commerce</Text>
+						)}
 					</View>
 				</TouchableOpacity>
 			</View>

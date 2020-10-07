@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
@@ -6,13 +6,13 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 
 export function HomeScreen({ navigation }) {
+	const [isSinhala, setIsSinhala] = useState(true);
 
-	let ol= "සාමාන්‍ය පෙළ";
-	let al= "උසස් පෙළ";
-	let other= "වෙනත් පාඨමාලා";
-	let paper= "ප්‍රශ්න පත්‍ර පිටුව";
-	let exam= "විභාග පිටුව";
-
+	let advancedLevel = 'උසස් පෙළ';
+	let ordinaryLevel = 'සාමාන්‍ය පෙළ';
+	let otherCourses = 'වෙනත් පාඨමාලා';
+	let papersPage = 'ප්‍රශ්න පත්‍ර පිටුව';
+	let examPage = 'විභාග පිටුව';
 
 	return (
 		<View style={{ flex: 1, margin: 10 }}>
@@ -25,7 +25,11 @@ export function HomeScreen({ navigation }) {
 				}}>
 				<TouchableOpacity
 					style={{ flex: 1 }}
-					onPress={() => navigation.navigate('A/L Subjects')}>
+					onPress={() =>
+						navigation.navigate('A/L Subjects', {
+							isSinhala: isSinhala,
+						})
+					}>
 					<View
 						style={{
 							flex: 1,
@@ -35,13 +39,30 @@ export function HomeScreen({ navigation }) {
 							alignItems: 'center',
 						}}>
 						<MaterialIcons name="school" size={100} color="black" />
-						<Text>Advanced Level</Text>
-						<Text>(A/L)</Text>
+						{isSinhala === true ? (
+							<View>
+								<Text>{advancedLevel}</Text>
+								<Text style={{ textAlign: 'center' }}>
+									(උ/පෙළ)
+								</Text>
+							</View>
+						) : (
+							<View>
+								<Text>Advanced Level</Text>
+								<Text style={{ textAlign: 'center' }}>
+									(A/L)
+								</Text>
+							</View>
+						)}
 					</View>
 				</TouchableOpacity>
 				<TouchableOpacity
 					style={{ flex: 1 }}
-					onPress={() => navigation.navigate('O/L Subjects')}>
+					onPress={() =>
+						navigation.navigate('O/L Subjects', {
+							isSinhala: isSinhala,
+						})
+					}>
 					<View
 						style={{
 							flex: 1,
@@ -55,8 +76,21 @@ export function HomeScreen({ navigation }) {
 							size={90}
 							color="black"
 						/>
-						<Text>Ordinary Level</Text>
-						<Text>(O/L)</Text>
+						{isSinhala === true ? (
+							<View>
+								<Text>{ordinaryLevel}</Text>
+								<Text style={{ textAlign: 'center' }}>
+									(සා/පෙළ)
+								</Text>
+							</View>
+						) : (
+							<View>
+								<Text>Ordinary Level</Text>
+								<Text style={{ textAlign: 'center' }}>
+									(O/L)
+								</Text>
+							</View>
+						)}
 					</View>
 				</TouchableOpacity>
 			</View>
@@ -82,7 +116,11 @@ export function HomeScreen({ navigation }) {
 							size={100}
 							color="black"
 						/>
-						<Text>Other Courses</Text>
+						{isSinhala === true ? (
+							<Text>{otherCourses}</Text>
+						) : (
+							<Text>Other Courses</Text>
+						)}
 					</View>
 				</TouchableOpacity>
 				<TouchableOpacity
@@ -97,7 +135,11 @@ export function HomeScreen({ navigation }) {
 							alignItems: 'center',
 						}}>
 						<Ionicons name="ios-paper" size={100} color="black" />
-						<Text>Papers Page</Text>
+						{isSinhala === true ? (
+							<Text>{papersPage}</Text>
+						) : (
+							<Text>Papers Page</Text>
+						)}
 					</View>
 				</TouchableOpacity>
 			</View>
@@ -122,7 +164,11 @@ export function HomeScreen({ navigation }) {
 							size={100}
 							color="black"
 						/>
-						<Text>Exams and Tests</Text>
+						{isSinhala === true ? (
+							<Text>{examPage}</Text>
+						) : (
+							<Text>Exams and Tests</Text>
+						)}
 					</View>
 				</TouchableOpacity>
 			</View>
