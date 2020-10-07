@@ -21,6 +21,10 @@
     },
     "web": {
       "favicon": "./src/assets/favicon.png"
+    },
+    "android": {
+      "package": "lk.sliit.nenasa",
+      "versionCode": 1
     }
   }
 }
