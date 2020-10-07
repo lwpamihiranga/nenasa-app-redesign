@@ -12,7 +12,7 @@ export function OLSubjectsScreen({ route, navigation }) {
 	let religion = 'ආගම';
 	let english = 'ඉංග්‍රීසි';
 	let sinhala = 'සිංහල';
-	let science = 'විද්යාව';
+	let science = 'විද්‍යාව';
 	let informationTechnology = 'තොරතුරු තාක්ෂණය';
 	let mathematics = 'ගණිතය';
 	let art = 'කලාව';
@@ -86,7 +86,11 @@ export function OLSubjectsScreen({ route, navigation }) {
 							alignItems: 'center',
 						}}>
 						<Ionicons name="ios-paper" size={50} color="black" />
-						<Text>English</Text>
+						{isSinhala === true ? (
+							<Text>{english}</Text>
+						) : (
+							<Text>English</Text>
+						)}
 					</View>
 				</TouchableOpacity>
 			</View>
@@ -110,7 +114,11 @@ export function OLSubjectsScreen({ route, navigation }) {
 							alignItems: 'center',
 						}}>
 						<Ionicons name="ios-paper" size={50} color="black" />
-						<Text>Sinhala</Text>
+						{isSinhala === true ? (
+							<Text>{sinhala}</Text>
+						) : (
+							<Text>Sinhala</Text>
+						)}
 					</View>
 				</TouchableOpacity>
 				<TouchableOpacity
@@ -131,7 +139,11 @@ export function OLSubjectsScreen({ route, navigation }) {
 							size={50}
 							color="black"
 						/>
-						<Text>Science</Text>
+						{isSinhala === true ? (
+							<Text>{science}</Text>
+						) : (
+							<Text>Science</Text>
+						)}
 					</View>
 				</TouchableOpacity>
 			</View>
@@ -159,7 +171,11 @@ export function OLSubjectsScreen({ route, navigation }) {
 							size={50}
 							color="black"
 						/>
-						<Text>ICT</Text>
+						{isSinhala === true ? (
+							<Text>{informationTechnology}</Text>
+						) : (
+							<Text>ICT</Text>
+						)}
 					</View>
 				</TouchableOpacity>
 				<TouchableOpacity
@@ -180,7 +196,11 @@ export function OLSubjectsScreen({ route, navigation }) {
 							size={50}
 							color="black"
 						/>
-						<Text>Mathematics</Text>
+						{isSinhala === true ? (
+							<Text>{mathematics}</Text>
+						) : (
+							<Text>Mathematics</Text>
+						)}
 					</View>
 				</TouchableOpacity>
 			</View>
@@ -208,7 +228,11 @@ export function OLSubjectsScreen({ route, navigation }) {
 							size={50}
 							color="black"
 						/>
-						<Text>Art</Text>
+						{isSinhala === true ? (
+							<Text>{art}</Text>
+						) : (
+							<Text>Art</Text>
+						)}
 					</View>
 				</TouchableOpacity>
 				<TouchableOpacity
@@ -229,7 +253,11 @@ export function OLSubjectsScreen({ route, navigation }) {
 							size={50}
 							color="black"
 						/>
-						<Text>Drama</Text>
+						{isSinhala === true ? (
+							<Text>{drama}</Text>
+						) : (
+							<Text>Drama</Text>
+						)}
 					</View>
 				</TouchableOpacity>
 			</View>
@@ -253,7 +281,11 @@ export function OLSubjectsScreen({ route, navigation }) {
 							alignItems: 'center',
 						}}>
 						<Entypo name="man" size={50} color="black" />
-						<Text>Dancing</Text>
+						{isSinhala === true ? (
+							<Text>{dancing}</Text>
+						) : (
+							<Text>Dancing</Text>
+						)}
 					</View>
 				</TouchableOpacity>
 				<TouchableOpacity
@@ -274,7 +306,11 @@ export function OLSubjectsScreen({ route, navigation }) {
 							size={50}
 							color="black"
 						/>
-						<Text>Music</Text>
+						{isSinhala === true ? (
+							<Text>{music}</Text>
+						) : (
+							<Text>Music</Text>
+						)}
 					</View>
 				</TouchableOpacity>
 			</View>
