@@ -24,8 +24,9 @@ export function ALSubjectsScreen({ route, navigation }) {
 	let artSubjects = 'කලා විෂයයන්';
 	let sinhala = 'සිංහල';
 	let buddhistCulture = 'බෞද්ධ සංස්කෘතිය';
-	let art = 'චිත්ර';
+	let art = 'කලාව';
 	let drama = 'නාට්‍ය';
+	let dancing = 'නැටුම්';
 	let englishLitereture = 'ඉංග්‍රීසි සාහිත්‍යය';
 	let technologySubjects = 'තාක්ෂණ විෂයයන්';
 	let bioTechnology = 'ජෛව තාක්ෂණය';
@@ -393,7 +394,11 @@ export function ALSubjectsScreen({ route, navigation }) {
 							alignItems: 'center',
 						}}>
 						<Ionicons name="ios-paper" size={30} color="black" />
-						<Text>Sinhala</Text>
+						{isSinhala === true ? (
+							<Text>{sinhala}</Text>
+						) : (
+							<Text>Sinhala</Text>
+						)}
 					</View>
 				</TouchableOpacity>
 				<TouchableOpacity
@@ -414,7 +419,13 @@ export function ALSubjectsScreen({ route, navigation }) {
 							size={30}
 							color="black"
 						/>
-						<Text>BC</Text>
+						{isSinhala === true ? (
+							<Text style={{ textAlign: 'center', fontSize: 13 }}>
+								{buddhistCulture}
+							</Text>
+						) : (
+							<Text>BC</Text>
+						)}
 					</View>
 				</TouchableOpacity>
 				<TouchableOpacity
@@ -435,7 +446,11 @@ export function ALSubjectsScreen({ route, navigation }) {
 							size={30}
 							color="black"
 						/>
-						<Text>Art</Text>
+						{isSinhala === true ? (
+							<Text>{art}</Text>
+						) : (
+							<Text>Art</Text>
+						)}
 					</View>
 				</TouchableOpacity>
 			</View>
@@ -464,7 +479,11 @@ export function ALSubjectsScreen({ route, navigation }) {
 							size={30}
 							color="black"
 						/>
-						<Text>Drama</Text>
+						{isSinhala === true ? (
+							<Text>{drama}</Text>
+						) : (
+							<Text>Drama</Text>
+						)}
 					</View>
 				</TouchableOpacity>
 				<TouchableOpacity
@@ -481,7 +500,11 @@ export function ALSubjectsScreen({ route, navigation }) {
 							alignItems: 'center',
 						}}>
 						<Entypo name="man" size={30} color="black" />
-						<Text>Dancing</Text>
+						{isSinhala === true ? (
+							<Text>{dancing}</Text>
+						) : (
+							<Text>Dancing</Text>
+						)}
 					</View>
 				</TouchableOpacity>
 				<TouchableOpacity
@@ -498,7 +521,13 @@ export function ALSubjectsScreen({ route, navigation }) {
 							alignItems: 'center',
 						}}>
 						<Ionicons name="ios-paper" size={30} color="black" />
-						<Text>English Lit</Text>
+						{isSinhala === true ? (
+							<Text style={{ fontSize: 13 }}>
+								{englishLitereture}
+							</Text>
+						) : (
+							<Text>Englist Lit</Text>
+						)}
 					</View>
 				</TouchableOpacity>
 			</View>
@@ -546,7 +575,13 @@ export function ALSubjectsScreen({ route, navigation }) {
 							size={24}
 							color="black"
 						/>
-						<Text>Eng.Technology</Text>
+						{isSinhala === true ? (
+							<Text style={{ textAlign: 'center', fontSize: 13 }}>
+								{engineeringTechnology}
+							</Text>
+						) : (
+							<Text>Eng.Technology</Text>
+						)}
 					</View>
 				</TouchableOpacity>
 				<TouchableOpacity
@@ -563,7 +598,13 @@ export function ALSubjectsScreen({ route, navigation }) {
 							alignItems: 'center',
 						}}>
 						<FontAwesome5 name="dna" size={30} color="black" />
-						<Text>Biotechnology</Text>
+						{isSinhala === true ? (
+							<Text style={{ textAlign: 'center', fontSize: 13 }}>
+								{bioTechnology}
+							</Text>
+						) : (
+							<Text>Biotechnology</Text>
+						)}
 					</View>
 				</TouchableOpacity>
 				<TouchableOpacity
@@ -580,7 +621,13 @@ export function ALSubjectsScreen({ route, navigation }) {
 							alignItems: 'center',
 						}}>
 						<Entypo name="thermometer" size={24} color="black" />
-						<Text>SFT</Text>
+						{isSinhala === true ? (
+							<Text style={{ textAlign: 'center', fontSize: 12 }}>
+								{scienceForTechnology}
+							</Text>
+						) : (
+							<Text>SFT</Text>
+						)}
 					</View>
 				</TouchableOpacity>
 			</View>
