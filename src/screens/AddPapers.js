@@ -1,17 +1,11 @@
 import React from 'react';
-import {
-	StyleSheet,
-	Text,
-	View,
-	TouchableOpacity,
-	TextInput,
-	Alert,
-} from 'react-native';
+import { Text, View, TouchableOpacity, TextInput, Alert } from 'react-native';
 import RadioGroup, { Radio } from 'react-native-radio-input';
 import DropDownPicker from 'react-native-dropdown-picker';
 import { Ionicons } from '@expo/vector-icons';
 import DocumentPicker from 'react-native-document-picker';
 import { Entypo } from '@expo/vector-icons';
+import * as DocumentPicker from 'expo-document-picker';
 
 export function AddPapers() {
 	let year = [
@@ -73,11 +67,9 @@ export function AddPapers() {
 
 			<View
 				style={{
-					marginBottom: 20,
+					marginBottom: 10,
 					marginLeft: 20,
 					marginRight: 20,
-					marginTop: 20,
-					marginBottom: 5,
 				}}>
 				<DropDownPicker
 					items={[
@@ -131,35 +123,34 @@ export function AddPapers() {
 					}
 				/>
 			</View>
-
 			<TextInput
 				style={{
 					marginLeft: 20,
 					marginRight: 20,
-					marginTop: 20,
 					borderBottomColor: '#000000',
 					borderBottomWidth: 1,
 					height: 50,
 					borderColor: 'gray',
 					borderWidth: 1,
-					textAlign: 'center',
+					textAlign: 'left',
+					paddingLeft: 20,
 				}}
 				onChangeText={(text) => onChangeText(text)}
 				value={value}
 				placeholder="Write here......"
 			/>
-
 			<TextInput
 				style={{
 					marginLeft: 20,
 					marginRight: 20,
-					marginTop: 20,
+					marginTop: 10,
 					borderBottomColor: '#000000',
 					borderBottomWidth: 1,
-					height: 150,
+					height: 100,
 					borderColor: 'gray',
 					borderWidth: 1,
-					textAlign: 'center',
+					textAlign: 'left',
+					paddingLeft: 20,
 				}}
 				onChangeText={(textdesc) => onChangeTextdesc(textdesc)}
 				value={valuepapers}
@@ -167,16 +158,14 @@ export function AddPapers() {
 				numberOfLines={2}
 				multiline={false}
 			/>
-
 			<TouchableOpacity
 				style={{
 					alignItems: 'center',
 					backgroundColor: '#DDDDDD',
-					padding: 10,
+					padding: 15,
 					marginLeft: 20,
 					marginRight: 20,
-					marginTop: 20,
-					backgroundColor: '#aba9a6',
+					marginTop: 10,
 				}}
 				onPress={pickDocument}>
 				<Text>Upload File</Text>
@@ -186,9 +175,9 @@ export function AddPapers() {
 				style={{
 					marginLeft: 20,
 					marginRight: 20,
-					marginTop: 20,
+					marginTop: 10,
 				}}>
-				<View style={{ marginBottom: 20 }}>
+				<View style={{ marginBottom: 10 }}>
 					<DropDownPicker
 						items={[
 							{ label: 'Year 6', value: 'Year 6' },
@@ -237,7 +226,6 @@ export function AddPapers() {
 					flexDirection: 'row',
 					flexGrow: 1,
 					justifyContent: 'space-evenly',
-					marginTop: 20,
 				}}>
 				<RadioGroup
 					getChecked={getChecked}
@@ -259,7 +247,6 @@ export function AddPapers() {
 				style={{
 					flex: 1,
 					flexDirection: 'row',
-					margin: 5,
 					flexGrow: 1,
 					justifyContent: 'flex-end',
 				}}>
@@ -295,7 +282,6 @@ export function AddPapers() {
 									color: '#000000',
 									fontSize: 18,
 									marginTop: 12,
-									fontSize: 19,
 									fontWeight: 'bold',
 									marginLeft: 3,
 								}}>

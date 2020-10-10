@@ -13,6 +13,7 @@ import { FaceExamPage1 } from '../screens/FaceExamPage1';
 import { FaceExamPage2 } from '../screens/FaceExamPage2';
 import { SearchPapers } from '../screens/SearchPapers';
 import { AddPapers } from '../screens/AddPapers';
+import { CreateExamScreen } from '../screens/CreateExamScreen';
 import { Ionicons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 
@@ -110,6 +111,7 @@ export function HomeStack({ navigation }) {
 				component={AddPapers}
 				options={{ title: 'Add Paper', headerTitleAlign: 'center' }}
 			/>
+			<Stack.Screen name="AddExam" component={CreateExamScreen} />
 		</Stack.Navigator>
 	);
 }

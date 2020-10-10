@@ -3,11 +3,12 @@ import uuid from 'uuid-random';
 import { Alert, StyleSheet, Text, View } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { AntDesign } from '@expo/vector-icons';
-import { RadioButton, TextInput } from 'react-native-paper';
+import { TextInput } from 'react-native-paper';
 import { CreateExamAnswerCard } from '../components/CreateExamAnswerCard';
 
 export function CreateExamQuestionCard({ navigation }) {
-	//needs further implementation
+	const [answerCards, setAnswerCards] = useState([]);
+
 	const [question, setQuestion] = useState({
 		id: 1,
 		text: '',
@@ -19,7 +20,6 @@ export function CreateExamQuestionCard({ navigation }) {
 		],
 		correctAnswer: 0,
 	});
-	//needs further implementation
 	const createExamAnswerCard = (text) => {
 		if (!text) {
 			Alert.alert('Error', 'Please enter an answer', [{ text: 'Ok' }]);
@@ -29,7 +29,17 @@ export function CreateExamQuestionCard({ navigation }) {
 			});
 		}
 	};
-	//needs further implementation
+
+	let addAnAnswerCard = () => {
+		setAnswerCards([
+			...answerCards,
+			<CreateExamAnswerCard
+				createExamAnswerCard={createExamAnswerCard}
+				key={uuid()}
+			/>,
+		]);
+	};
+
 	return (
 		<View>
 			<View style={styles.mainCard}>
@@ -41,12 +51,10 @@ export function CreateExamQuestionCard({ navigation }) {
 						placeholderTextColor="black"
 					/>
 				</View>
-				<CreateExamAnswerCard
-					createExamAnswerCard={createExamAnswerCard}
-				/>
+				{answerCards}
 				<TouchableOpacity
 					style={styles.addAnswer}
-					onPress={() => Alert.alert('Add answer')}>
+					onPress={addAnAnswerCard}>
 					<AntDesign name="pluscircle" size={30} color="black" />
 					<Text style={styles.buttonText}>Add answer</Text>
 				</TouchableOpacity>
@@ -61,6 +69,8 @@ const styles = StyleSheet.create({
 		marginHorizontal: 10,
 		padding: 10,
 		flexDirection: 'column',
+		marginTop: 5,
+		marginBottom: 5,
 	},
 	topSubCard: {
 		flexDirection: 'row',

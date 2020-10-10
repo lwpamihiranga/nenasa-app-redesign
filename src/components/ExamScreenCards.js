@@ -1,12 +1,5 @@
 import React, { useState } from 'react';
-import {
-	StyleSheet,
-	Text,
-	View,
-	alertMessage,
-	Alert,
-	alert,
-} from 'react-native';
+import { StyleSheet, Text, View, Alert } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { AntDesign, FontAwesome } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
@@ -32,30 +25,10 @@ export function ExamScreenCards({ exam }) {
 	};
 
 	return (
-		<TouchableOpacity
-			style={styles.card}
-			onPress={() =>
-				Alert.alert(
-					'important !',
-					'You wish to proceed with this quiz?',
-					[
-						{
-							text: 'Cancel',
-							onPress: () => console.log('Cancel Pressed!'),
-						},
-						{
-							text: 'Start',
-							onPress: () => navigation.navigate('FaceExamPage1'),
-						},
-					]
-				)
-			}>
+		<View style={styles.card}>
 			<Text style={styles.text}>{exam.text}</Text>
 			<View style={styles.upperhalf}>
-				<View style={styles.carets}>
-					<AntDesign name="caretup" size={24} color="black" />
-					<AntDesign name="caretdown" size={24} color="black" />
-				</View>
+				<View style={styles.carets}></View>
 				<View>
 					<Text style={styles.noOfQuestions}>
 						{exam.noOfQuestions} questions
@@ -66,7 +39,26 @@ export function ExamScreenCards({ exam }) {
 				</View>
 			</View>
 			<View style={styles.lowerhalf}>
-				<TouchableOpacity style={styles.button}>
+				<TouchableOpacity
+					style={styles.button}
+					onPress={() =>
+						Alert.alert(
+							'important !',
+							'You wish to proceed with this quiz?',
+							[
+								{
+									text: 'Cancel',
+									onPress: () =>
+										console.log('Cancel Pressed!'),
+								},
+								{
+									text: 'Start',
+									onPress: () =>
+										navigation.navigate('FaceExamPage1'),
+								},
+							]
+						)
+					}>
 					<Text>Try</Text>
 					<AntDesign name="arrowright" size={20} color="black" />
 				</TouchableOpacity>
@@ -88,7 +80,7 @@ export function ExamScreenCards({ exam }) {
 					<Text style={styles.date}>{exam.date}</Text>
 				</View>
 			</View>
-		</TouchableOpacity>
+		</View>
 	);
 }
 

@@ -1,10 +1,9 @@
 import uuid from 'uuid-random';
 import React, { useState } from 'react';
-import { StyleSheet, FlatList, SafeAreaView } from 'react-native';
+import { StyleSheet, FlatList, View } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 
 import { SubjectQuestionsScreenCards } from '../components/SubjectQuestionsScreenCards';
-import Header from '../components/Header';
 
 export function SubjectQuestionsScreen({ navigation }) {
 	const [questions, setQuestions] = useState([
@@ -53,22 +52,20 @@ export function SubjectQuestionsScreen({ navigation }) {
 				'Fill in the blanks using the verbs given in the brackets.\n\nWhat ___ wrong with you? (be)',
 			noOfAnswers: 2,
 			user: {
-				name: 'Samadhi Samarathunga',
+				name: 'Samadhi Ranasign',
 			},
 			date: 'Nov 10 2019',
 		},
 	]);
 
 	return (
-		<SafeAreaView style={styles.container}>
-			{/* <Header title="A/L English" /> */}
+		<View style={styles.container}>
 			<FlatList
 				data={questions}
 				renderItem={({ item }) => (
 					<SubjectQuestionsScreenCards question={item} />
 				)}
 				keyExtractor={(item, index) => index.toString()}
-				onPress={() => navigation.navigate('AnswerQuestion')}
 			/>
 			<AntDesign
 				name="pluscircle"
@@ -77,7 +74,7 @@ export function SubjectQuestionsScreen({ navigation }) {
 				style={styles.floatButton}
 				onPress={() => navigation.navigate('AskQuestionScreen')}
 			/>
-		</SafeAreaView>
+		</View>
 	);
 }
 
