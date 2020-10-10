@@ -24,19 +24,25 @@ export function AddPapers() {
 		console.log(value);
 	};
 
-	async function pickDocument() {
-		try {
-			const result = await DocumentPicker.pick({
-				type: [DocumentPicker.types.allFiles],
-			});
-			console.log('result', result);
-		} catch (err) {
-			if (DocumentPicker.isCancel(err)) {
-			} else {
-				throw err;
-			}
-		}
-	}
+	// async function pickDocument() {
+	// 	try {
+	// 		const result = await DocumentPicker.pick({
+	// 			type: [DocumentPicker.types.allFiles],
+	// 		});
+	// 		console.log('result', result);
+	// 	} catch (err) {
+	// 		if (DocumentPicker.isCancel(err)) {
+	// 		} else {
+	// 			throw err;
+	// 		}
+	// 	}
+	// }
+
+	pickDocument = () => {
+		DocumentPicker.getDocumentAsync({ type: '*/*' }).then((res) => {
+			Alert.alert('File selected', 'Uploaded file '.concat(res.name));
+		});
+	};
 
 	const [value, onChangeText] = React.useState('');
 	const [valuepapers, onChangeTextdesc] = React.useState('');
