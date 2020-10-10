@@ -3,7 +3,6 @@ import { Text, View, TouchableOpacity, TextInput, Alert } from 'react-native';
 import RadioGroup, { Radio } from 'react-native-radio-input';
 import DropDownPicker from 'react-native-dropdown-picker';
 import { Ionicons } from '@expo/vector-icons';
-import DocumentPicker from 'react-native-document-picker';
 import { Entypo } from '@expo/vector-icons';
 import * as DocumentPicker from 'expo-document-picker';
 
