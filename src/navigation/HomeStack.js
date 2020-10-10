@@ -39,16 +39,16 @@ export function HomeStack({ navigation }) {
 					headerLeftContainerStyle: { paddingLeft: 10 },
 					title: 'Nenasa Education',
 					headerTitleAlign: 'center',
-					headerRight: () => {
-						return (
-							<FontAwesome
-								name="exchange"
-								size={24}
-								color="black"
-							/>
-						);
-					},
-					headerRightContainerStyle: { paddingRight: 10 },
+					// headerRight: () => {
+					// 	return (
+					// 		<FontAwesome
+					// 			name="exchange"
+					// 			size={24}
+					// 			color="black"
+					// 		/>
+					// 	);
+					// },
+					// headerRightContainerStyle: { paddingRight: 10 },
 				}}
 			/>
 			<Stack.Screen name="Test" component={TestScreen} />
